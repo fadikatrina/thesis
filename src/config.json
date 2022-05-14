@@ -1,0 +1,5 @@
+{
+  "car_max_charge_level": 100,
+  "station_max_capacity": 5,
+  "car_initial_charge_level": 100
+}
