@@ -4,6 +4,7 @@ import io
 
 from src.entities.simulation import Simulation
 from src.entities.trip import Trip
+from src.entities.requesttriplist import RequestTripList
 import copy
 
 
@@ -17,22 +18,24 @@ def captured_output():
 	finally:
 		sys.stdout, sys.stderr = old_out, old_err
 
-with captured_output() as (out, err):
-	sim = Simulation()
 
-	sim.trips.append(Trip(5, 5, 1, 2,))
-	sim.trips.append(Trip(4, 4, 1, 2, 1,))
-	sim.trips.append(Trip(3, 3, 1, 2))
-	sim.trips.append(Trip(6, 6, 1, 2))
-	sim.trips.append(Trip(7, 7, 1, 2, 1,))
-	sim.trips.append(Trip(1, 6, 1, 2, 2))
+with captured_output() as (out, err):
+	requests = RequestTripList()
+	requests.append(Trip(5, 6, 1, 2,))
+	sim = Simulation(requests)
+
+	sim.request_trip_list.append(Trip(4, 5, 1, 2, 1,))
+	sim.request_trip_list.append(Trip(3, 4, 1, 2))
+	sim.request_trip_list.append(Trip(6, 7, 1, 2))
+	sim.request_trip_list.append(Trip(7, 8, 1, 2, 1,))
+	sim.request_trip_list.append(Trip(1, 2, 1, 2, 2))
 
 	print("Auto sorting by trip list")
-	for trip in sim.trips:
+	for trip in sim.request_trip_list:
 		print(trip)
 
 	print("get_trips_without_cars")
-	for trip_without_car in sim.trips.get_trips_without_cars():
+	for trip_without_car in sim.announced_trip_list.get_trips_without_cars():
 		print(trip_without_car)
 
 	print("stations and cars all init properly")
@@ -44,9 +47,9 @@ with captured_output() as (out, err):
 	print("deep copy vs original ")
 	sim2 = copy.deepcopy(sim)
 
-	sim.stations = []
 	print("Original")
 	for station in sim.stations:
+		station.cars.pop(0)
 		print(station)
 		for car in station.cars:
 			print(car)
@@ -57,7 +60,7 @@ with captured_output() as (out, err):
 		for car in station.cars:
 			print(car)
 
-	for trip in sim.trips:
+	for trip in sim.request_trip_list:
 		print(trip)
 		print(trip.distance)
 		print(trip.charge_cost)

@@ -1,0 +1,82 @@
+{
+  "trips": [
+    {
+      "request_time": 5,
+      "start_time": 10,
+      "start_station_id": 1,
+      "end_station_id": 5
+    },
+    {
+      "request_time": 11,
+      "start_time": 12,
+      "start_station_id": 1,
+      "end_station_id": 6
+    },
+    {
+      "request_time": 13,
+      "start_time": 14,
+      "start_station_id": 1,
+      "end_station_id": 7
+    },
+    {
+      "request_time": 15,
+      "start_time": 16,
+      "start_station_id": 1,
+      "end_station_id": 8
+    },
+    {
+      "request_time": 17,
+      "start_time": 18,
+      "start_station_id": 1,
+      "end_station_id": 9
+    },
+    {
+      "request_time": 19,
+      "start_time": 20,
+      "start_station_id": 1,
+      "end_station_id": 10
+    },
+    {
+      "request_time": 5,
+      "start_time": 10,
+      "start_station_id": 2,
+      "end_station_id": 5
+    },
+    {
+      "request_time": 11,
+      "start_time": 12,
+      "start_station_id": 2,
+      "end_station_id": 6
+    },
+    {
+      "request_time": 13,
+      "start_time": 14,
+      "start_station_id": 2,
+      "end_station_id": 7
+    },
+    {
+      "request_time": 15,
+      "start_time": 16,
+      "start_station_id": 2,
+      "end_station_id": 8
+    },
+    {
+      "request_time": 17,
+      "start_time": 18,
+      "start_station_id": 2,
+      "end_station_id": 9
+    },
+    {
+      "request_time": 19,
+      "start_time": 20,
+      "start_station_id": 2,
+      "end_station_id": 10
+    },
+    {
+      "request_time": 190,
+      "start_time": 200,
+      "start_station_id": 3,
+      "end_station_id": 10
+    }
+  ]
+}

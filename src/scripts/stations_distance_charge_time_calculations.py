@@ -2,7 +2,6 @@
 # except the traffic level thing
 
 from src.entities.simulation import Simulation
-from src.entities.station import Station
 import json
 import math
 

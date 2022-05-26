@@ -1,6 +1,6 @@
 from src.helpers.configuration import get_config_value
 from src.entities.car import Car
-
+from src.helpers.car_finder import pop_from_list
 
 def initialise_cars(station_id, max_station_capacity):
 	cars = []
@@ -23,11 +23,20 @@ class Station:
 		self.max_capacity = max_capacity
 
 		if not cars:
-			cars = initialise_cars(self.id_, self.max_capacity)
+			cars = initialise_cars(self.id_, get_config_value("station_initial_number_of_cars"))
 		self.cars = cars
 
 		if len(self.cars) > max_capacity:
 			raise ValueError("A station can not have more cars than max_capacity")
+
+	def remove_car(self, car_id):
+		self.cars, found_car = pop_from_list(self.cars, car_id)
+		return found_car
+
+	def add_car(self, car):
+		if not len(self.cars) < self.max_capacity:
+			raise RuntimeError(f"Can not add CAR ({car}) in STATION ({self}) because max capacity reached")
+		self.cars.append(car)
 
 	def __str__(self):
 		return f"Station ID {self.id_} NAME {self.name} CARS# {len(self.cars)}"

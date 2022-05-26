@@ -3,25 +3,7 @@ import operator
 
 class TripList(list):
 
-    # def __setitem__(self, key, value):
-    #     super(TripList, self).__setitem__(key, value)
-    #     self.sort_()
-    #     print("The list has been changed!")
-    #
-    # def __delitem__(self, value):
-    #     super(TripList, self).__delitem__(value)
-    #     print("The list has been changed!")
-    #
-    # def __add__(self, value):
-    #     super(TripList, self).__add__(value)
-    #     self.sort_()
-    #     print("The list has been changed!")
-    #
-    # def __iadd__(self, value):
-    #     super(TripList, self).__iadd__(value)
-    #     self.sort_()
-    #     print("The list has been changed!")
-
+    # https://stackoverflow.com/questions/58080700/calling-functions-when-a-list-changes-in-python
     def append(self, value):
         super(TripList, self).append(value)
         self.sort_()
@@ -40,6 +22,3 @@ class TripList(list):
             trips_without_car.append(trip)
         self.sort_()
         return trips_without_car
-
-    # def remove(self, value):
-    #     super(TripList, self).remove(value)
