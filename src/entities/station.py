@@ -1,4 +1,4 @@
-from src.helpers.configuration import get_config_value
+from src.input_access.configuration import get_config_value
 from src.entities.car import Car
 from src.helpers.car_finder import pop_from_list
 

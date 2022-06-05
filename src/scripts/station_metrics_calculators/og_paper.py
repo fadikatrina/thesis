@@ -46,9 +46,7 @@ for station1 in stations:
 		"dest":[]
 	})
 	for station2 in stations:
-		if station1.id_ == station2.id_:
-			print("Same station, skip")
-		else:
+		if station1.id_ != station2.id_:
 			duration, distance = calculate_duration(station1, station2)
 			charge = duration * 0.50
 			calc_list[i]["dest"].append({
@@ -59,5 +57,5 @@ for station1 in stations:
 			})
 	i+=1
 
-with open('../../data/stations_metrics_based_on_original_paper.json', 'w') as fp:
+with open('../../../input/locations/bristol_metrics_ogpaper.json', 'w') as fp:
 	json.dump(calc_list, fp)

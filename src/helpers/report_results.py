@@ -1,8 +1,10 @@
 from src.entities.simulation import Simulation
+from pathlib import Path
 
 
 def write_txt(sim: Simulation, filename):
-	with open(f'../../output/{filename}.txt', 'w') as f:
+	Path("../../output/results").mkdir(parents=True, exist_ok=True)
+	with open(f'../../output/results/{filename}.txt', 'w') as f:
 
 		f.write(f"SIMULATION END TIME {sim.simulation_clock}")
 		f.write('\n')

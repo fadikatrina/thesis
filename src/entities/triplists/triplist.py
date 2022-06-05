@@ -13,12 +13,11 @@ class TripList(list):
         self.sort(key=sort_key, reverse=False)
 
     def get_trips_without_cars(self):
-        trips_without_car = []
-        sort_key = operator.attrgetter("car_id")
-        self.sort(key=sort_key, reverse=False)
-        for trip in self:
-            if trip.has_a_car():
-                break
-            trips_without_car.append(trip)
-        self.sort_()
-        return trips_without_car
+        return [x for x in self if x.car_id == -1]
+
+    def get_trips_using_car(self, car_id):
+        return [x for x in self if x.car_id == car_id]
+
+    def get_trip_by_id(self, id):
+        return [x for x in self if x.id_ == id][0]
+

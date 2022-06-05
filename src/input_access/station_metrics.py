@@ -1,7 +1,12 @@
 import json
 
-f = open('../../data/stations_metrics_based_on_original_paper.json')
-station_datas = json.load(f)
+station_datas = None
+
+
+def load_station_metrics(filename):
+	global station_datas
+	f = open(f'../../input/locations/{filename}.json')
+	station_datas = json.load(f)
 
 
 def get_stations_metrics(start_station_id, end_station_id):

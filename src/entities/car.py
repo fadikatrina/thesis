@@ -1,4 +1,4 @@
-from src.helpers.configuration import get_config_value
+from src.input_access.configuration import get_config_value, get_car_charge_config_value
 
 
 class Car:
@@ -6,7 +6,10 @@ class Car:
 	def __init__(self, id_, current_charge_level=None, max_charge_level=None):
 		self.id_ = id_
 		if current_charge_level is None:
-			current_charge_level = get_config_value("car_initial_charge_level")
+			if get_car_charge_config_value(id_) is None:
+				current_charge_level = get_config_value("car_initial_charge_level")
+			else:
+				current_charge_level = get_car_charge_config_value(id_)
 		self.current_charge_level = current_charge_level
 		if max_charge_level is None:
 			max_charge_level = get_config_value("car_max_charge_level")

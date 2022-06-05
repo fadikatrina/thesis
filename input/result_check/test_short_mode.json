@@ -1,0 +1,27 @@
+[
+  {
+    "rule_name": "trip_assigned_car",
+    "car_id": 5,
+    "trip_id": 6
+  },
+  {
+    "rule_name": "trip_assigned_car",
+    "car_id": 2,
+    "trip_id": 1
+  },
+  {
+    "rule_name": "trip_assigned_car",
+    "car_id": 4,
+    "trip_id": 7
+  },
+  {
+    "rule_name": "trip_assigned_car",
+    "car_id": 7,
+    "trip_id": 12
+  },
+  {
+    "rule_name": "trip_assigned_car",
+    "car_id": 6,
+    "trip_id": 13
+  }
+]

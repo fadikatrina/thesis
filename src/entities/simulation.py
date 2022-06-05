@@ -1,9 +1,9 @@
-from src.data_access.mod_stations import get_mod_location_data
+from src.input_access.mod_stations import get_mod_location_data
 from src.entities.station import Station
-from src.entities.triplist import TripList
-from src.entities.inprogresstriplist import InProgressTripList
+from src.entities.triplists.triplist import TripList
+from src.entities.triplists.inprogresstriplist import InProgressTripList
 from src.helpers.car_finder import pop_from_list
-from src.helpers.configuration import get_config_value
+from src.input_access.configuration import get_config_value
 
 
 class Simulation:
@@ -16,29 +16,28 @@ class Simulation:
 	# THIS SECTION CONTAINS INITIALISATION AND SIMULATION PREPARATION
 	#
 
-	def __init__(self, trip_requests):
+	def __init__(self, trip_requests, mod_filename):
 		self.stations = []
 		self.l = None
-		self.LOG = True
 		self.request_trip_list = trip_requests
-		self.TOTAL_TRIPS_NO = len(trip_requests)
 		self.announced_trip_list = TripList()
 		self.in_progress_trip_list = InProgressTripList()
 		self.completed_trip_list = TripList()
 		self.rejected_trip_list = TripList()
 		self.cars_in_progress_trip = []
-		self.initialise_station_data()
+		self.initialise_station_data(mod_filename)
 		self.simulation_END = False
 		self.simulation_clock = 0  # seconds
-		self.announced_trip_list.append(self.request_trip_list.pop(0))
+		self.TOTAL_TRIPS_NO = len(trip_requests)
 		self.TOTAL_CARS_NO = self.calculate_total_cars_no_in_stations()
+		self.announced_trip_list.append(self.request_trip_list.pop(0))
 
 	def set_logger(self, logger):
 		self.l = logger
-		if self.LOG: self.l.debug(f"NEW LOGGER SET ({self}) ({self.l})")
+		self.l.debug(f"NEW LOGGER SET ({self}) ({self.l})")
 
-	def initialise_station_data(self):
-		for ml in get_mod_location_data():
+	def initialise_station_data(self, filename):
+		for ml in get_mod_location_data(filename):
 			self.stations.append(Station(ml["id"], ml["site_name"], ml["longitude"], ml["latitude"]))
 
 	# MAIN SIMULATION FUNCTION, the centre of the universe of this simulation
@@ -52,18 +51,19 @@ class Simulation:
 
 		if self.is_next_event_trip_request():
 			new_request = self.request_trip_list.pop(0)
-			if self.LOG: self.l.debug(f"NEW REQUEST ({new_request})")
+			self.l.info(f"NEW REQUEST ({new_request})")
+			self.check_new_announcing_trip_no_car_conflict(new_request)
 			self.announced_trip_list.append(new_request)
 			self.set_new_clock_time(new_request.request_time)
 		else:
 			current_trip = self.announced_trip_list.pop(0)
-			if self.LOG: self.l.debug(f"CURRENT TRIP ({current_trip})")
+			self.l.info(f"CURRENT TRIP ({current_trip})")
 			if not current_trip.has_a_car():
-				if self.LOG: self.l.debug(f"CURRENT TRIP REJECTED ({current_trip})")
+				self.l.info(f"CURRENT TRIP REJECTED ({current_trip})")
 				self.rejected_trip_list.append(current_trip)
 				self.set_new_clock_time(current_trip.start_time)
 			else:
-				if self.LOG: self.l.debug(f"CURRENT TRIP ACCEPTED ({current_trip})")
+				self.l.info(f"CURRENT TRIP ACCEPTED ({current_trip})")
 				self.in_progress_trip_list.append(current_trip)
 				self.set_new_clock_time(current_trip.start_time)
 				self.start_trip(current_trip)
@@ -76,24 +76,24 @@ class Simulation:
 
 	# removes the car from start station, checks if the car has enough charge and subtracts the charge
 	def start_trip(self, trip):
-		if self.LOG: self.l.debug(f"STARTING TRIP ({trip})")
+		self.l.info(f"STARTING TRIP ({trip})")
 		start_station = self.stations[trip.start_station_id]
 		car = start_station.remove_car(trip.car_id)
 		car.current_charge_level -= trip.charge_cost
 		assert car.current_charge_level >= 0
 		self.cars_in_progress_trip.append(car)
-		if self.LOG: self.l.debug(f"CAR ({car}) SUBTRACTED CHARGE ({trip.charge_cost})")
+		self.l.debug(f"CAR ({car}) SUBTRACTED CHARGE ({trip.charge_cost})")
 
 	# makes the cars available at end station, for trips with end time before current time, and moves the trips from
 	# in progress to completed list
 	def end_trips(self, force_all=False):
 		last_trip_time = 0
 		if force_all:
-			if self.LOG: self.l.debug(f"ENDING ALL TRIPS")
+			self.l.info(f"ENDING ALL TRIPS")
 		for i in range(len(self.in_progress_trip_list)):
 			trip = self.in_progress_trip_list[0]
 			if (trip.end_time <= self.simulation_clock) or force_all:
-				if self.LOG: self.l.debug(f"ENDING TRIP ({trip})")
+				self.l.info(f"ENDING TRIP ({trip})")
 				self.completed_trip_list.append(trip)
 				end_station = self.stations[trip.end_station_id]
 				self.cars_in_progress_trip, car = pop_from_list(self.cars_in_progress_trip, trip.car_id)
@@ -108,12 +108,12 @@ class Simulation:
 	# check which cars are in stations and need to be recharged, what is the charge level we need to add? since they
 	# finished their last trip
 	def update_cars_charge_level(self):
-		if self.LOG: self.l.debug(f"UPDATING CHARGE")
+		self.l.debug(f"UPDATING CHARGE")
 		for station in self.stations:
 			for car in station.cars:
 				if not car.is_charge_full():
 					charge_to_add = (self.simulation_clock - max(car.last_recharge, car.last_trip_end_time)) * get_config_value("car_recharge_per_second")
-					if self.LOG: self.l.debug(f"CAR ({car}) ADDING ({charge_to_add})")
+					self.l.debug(f"CAR ({car}) ADDING ({charge_to_add})")
 					car.add_charge(charge_to_add)
 					car.last_recharge = self.simulation_clock
 
@@ -128,13 +128,13 @@ class Simulation:
 
 	# fast forward to any point in time, as many iterations as needed to get there
 	def advance_simulation_to_time(self, time):
-		if self.LOG: self.l.debug(f"FAST FORWARDING TO ({time})")
+		self.l.debug(f"FAST FORWARDING TO ({time})")
 		while self.simulation_clock < time:
 			self.advance_simulation()
 
 	# changes the simulation clock, checks the new time is not in the past
 	def set_new_clock_time(self, new_time):
-		if self.LOG: self.l.debug(f"SIMULATION CLOCK ADVANCED TO ({new_time})")
+		self.l.info(f"SIMULATION CLOCK ADVANCED TO ({new_time})")
 		assert new_time >= self.simulation_clock
 		self.simulation_clock = new_time
 		self.end_trips()
@@ -184,6 +184,22 @@ class Simulation:
 		assert len(self.announced_trip_list) == len(new_triplist)
 		for i in range(len(new_triplist)):
 			assert self.announced_trip_list[i] == new_triplist[i]
+
+	# There is a feature where I can announce trips to the system that already have a car assignment, the problem is
+	# that sometimes this car has already been assigned/used by the algorithms, this method checks the integrity of the
+	# simulation by detecting such conflicts
+	def check_new_announcing_trip_no_car_conflict(self, new_request):
+		car_id = new_request.car_id
+		if not car_id or car_id == -1:
+			return
+		# car is not assigned
+		if len(self.announced_trip_list.get_trips_using_car(car_id)) != 0:
+			raise RuntimeWarning(f"New request ({new_request}) CAR_ID ({car_id}) already assigned to a trip")
+		# car is at the start station
+		try:
+			pop_from_list(self.stations[new_request.start_station_id].cars, car_id, True)
+		except RuntimeError:
+			raise RuntimeWarning(f"New request ({new_request}) CAR_ID ({car_id}) is not at the start station")
 
 	# helper function
 	def calculate_total_cars_no_in_stations(self):

@@ -1,0 +1,12 @@
+[
+  {
+    "rule_name": "car_in_station",
+    "car_id": 5,
+    "station_id": 5
+  },
+  {
+    "rule_name": "trip_assigned_car",
+    "car_id": 5,
+    "trip_id": 0
+  }
+]

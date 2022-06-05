@@ -1,0 +1,41 @@
+[
+  {
+    "experiment_name": "system_check",
+    "number_of_runs": 1,
+    "config" : {
+      	"algorithm_class" : "FirstAvailable",
+        "trip_requests_filename" : "default",
+        "log_filename" : "system_check",
+        "output_results_filename" : "system_check",
+        "check_results_filename" : "default",
+        "general_config_filename" : "default",
+        "car_charge_config_filename" : "default"
+    }
+  },
+  {
+    "experiment_name": "test_short_mode",
+    "number_of_runs": 1,
+    "config" : {
+		"algorithm_class" : "ShortMode",
+		"trip_requests_filename" : "test_short_mode",
+		"general_config_filename" : "test_short_mode",
+		"car_charge_config_filename" : "test_short_mode",
+		"check_results_filename" : "nothing",
+		"log_filename" : "test_short_mode",
+		"output_results_filename" : "test_short_mode"
+    }
+  },
+  {
+    "experiment_name": "test_long_mode",
+    "number_of_runs": 1,
+    "config" : {
+      	"algorithm_class" : "LongMode",
+        "trip_requests_filename" : "test_long_mode",
+        "log_filename" : "test_long_mode",
+        "output_results_filename" : "test_long_mode",
+        "check_results_filename" : "test_long_mode",
+        "general_config_filename" : "test_long_mode",
+        "car_charge_config_filename" : "test_long_mode"
+    }
+  }
+]

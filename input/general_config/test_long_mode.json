@@ -1,0 +1,7 @@
+{
+  "car_max_charge_level": 100,
+  "station_max_capacity": 8,
+  "station_initial_number_of_cars": 3,
+  "car_initial_charge_level": 10,
+  "car_recharge_per_second": 0
+}
