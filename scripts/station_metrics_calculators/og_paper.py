@@ -1,5 +1,9 @@
-# this is the same distance calculation used in the original paper
-# except the traffic level thing
+# this is the same distance calculation used in the original paper this research builds on
+# except the traffic level coefficient thing:
+# they classify the stations into 5 categories and increase the average speed by a scalar depending on this category
+# this is supposed to represent congestion, stations closer to the city centre have a lower average speed
+# while the categories assignment of the stations is available in the code, this scalar multiplier was not found
+# anywhere in the repo, therefore its not included in these calculations, contacting the authors did not help
 
 from src.entities.simulation import Simulation
 import json
@@ -57,5 +61,5 @@ for station1 in stations:
 			})
 	i+=1
 
-with open('../../../input/locations/bristol_metrics_ogpaper.json', 'w') as fp:
+with open('../../input/locations/bristol_metrics_ogpaper.json', 'w') as fp:
 	json.dump(calc_list, fp)

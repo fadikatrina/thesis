@@ -1,11 +1,11 @@
-from src.scripts.main import Main
+from src.main import Main
 import json
 import os
 
 f = open(f'./experiments.json')
 experiments = json.load(f)
 
-os.chdir("../src/scripts")
+os.chdir("../src")
 
 
 for experiment in experiments:

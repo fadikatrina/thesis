@@ -10,7 +10,7 @@ class Trip:
 		self.start_station_id = start_station_id
 		self.end_station_id = end_station_id
 		self.car_id = car_id
-		self.duration, self.distance, self.charge_cost = get_stations_metrics(start_station_id, end_station_id)
+		self.duration, self.distance, self.charge_cost = get_stations_metrics(start_station_id, end_station_id, start_time)
 		self.end_time = start_time + self.duration
 		assert start_time < self.end_time
 		assert request_time < start_time

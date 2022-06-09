@@ -8,7 +8,10 @@ import copy
 
 class LongMode:
 
-	short_mode = ShortMode()
+	short_mode = None
+
+	def __init__(self, algo_car_picking_mode):
+		self.short_mode = ShortMode(algo_car_picking_mode)
 
 	def keep_cars_with_1_future_trip(self, cars, trip_list):
 		avail_cars = []

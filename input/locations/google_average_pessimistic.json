@@ -1,0 +1,1337 @@
+[
+  {
+    "start_id": 0,
+    "dest": [
+      {
+        "finish_id": 1,
+        "duration": 2858,
+        "distance": 59290,
+        "charge_cost": 25.791150000000002
+      },
+      {
+        "finish_id": 2,
+        "duration": 1526,
+        "distance": 16002,
+        "charge_cost": 6.96087
+      },
+      {
+        "finish_id": 3,
+        "duration": 745,
+        "distance": 6894,
+        "charge_cost": 2.99889
+      },
+      {
+        "finish_id": 4,
+        "duration": 1201,
+        "distance": 13449,
+        "charge_cost": 5.850315
+      },
+      {
+        "finish_id": 5,
+        "duration": 967,
+        "distance": 8754,
+        "charge_cost": 3.80799
+      },
+      {
+        "finish_id": 6,
+        "duration": 2743,
+        "distance": 58775,
+        "charge_cost": 25.567125
+      },
+      {
+        "finish_id": 7,
+        "duration": 1247,
+        "distance": 15050,
+        "charge_cost": 6.54675
+      },
+      {
+        "finish_id": 8,
+        "duration": 1225,
+        "distance": 20074,
+        "charge_cost": 8.73219
+      },
+      {
+        "finish_id": 9,
+        "duration": 1059,
+        "distance": 12931,
+        "charge_cost": 5.624985
+      },
+      {
+        "finish_id": 10,
+        "duration": 2006,
+        "distance": 19922,
+        "charge_cost": 8.66607
+      },
+      {
+        "finish_id": 11,
+        "duration": 1292,
+        "distance": 14066,
+        "charge_cost": 6.11871
+      },
+      {
+        "finish_id": 12,
+        "duration": 1155,
+        "distance": 13023,
+        "charge_cost": 5.665005
+      },
+      {
+        "finish_id": 13,
+        "duration": 2191,
+        "distance": 52411,
+        "charge_cost": 22.798785
+      },
+      {
+        "finish_id": 14,
+        "duration": 2256,
+        "distance": 25946,
+        "charge_cost": 11.28651
+      }
+    ]
+  },
+  {
+    "start_id": 1,
+    "dest": [
+      {
+        "finish_id": 0,
+        "duration": 2771,
+        "distance": 58871,
+        "charge_cost": 25.608885
+      },
+      {
+        "finish_id": 2,
+        "duration": 3648,
+        "distance": 71853,
+        "charge_cost": 31.256055
+      },
+      {
+        "finish_id": 3,
+        "duration": 2830,
+        "distance": 61759,
+        "charge_cost": 26.865165
+      },
+      {
+        "finish_id": 4,
+        "duration": 3323,
+        "distance": 69300,
+        "charge_cost": 30.1455
+      },
+      {
+        "finish_id": 5,
+        "duration": 3208,
+        "distance": 63330,
+        "charge_cost": 27.54855
+      },
+      {
+        "finish_id": 6,
+        "duration": 261,
+        "distance": 1450,
+        "charge_cost": 0.63075
+      },
+      {
+        "finish_id": 7,
+        "duration": 3461,
+        "distance": 71804,
+        "charge_cost": 31.23474
+      },
+      {
+        "finish_id": 8,
+        "duration": 3324,
+        "distance": 73765,
+        "charge_cost": 32.087775
+      },
+      {
+        "finish_id": 9,
+        "duration": 3181,
+        "distance": 68783,
+        "charge_cost": 29.920605000000002
+      },
+      {
+        "finish_id": 10,
+        "duration": 4128,
+        "distance": 75773,
+        "charge_cost": 32.961255
+      },
+      {
+        "finish_id": 11,
+        "duration": 3414,
+        "distance": 69917,
+        "charge_cost": 30.413895
+      },
+      {
+        "finish_id": 12,
+        "duration": 3277,
+        "distance": 68875,
+        "charge_cost": 29.960625
+      },
+      {
+        "finish_id": 13,
+        "duration": 919,
+        "distance": 8829,
+        "charge_cost": 3.840615
+      },
+      {
+        "finish_id": 14,
+        "duration": 4278,
+        "distance": 87754,
+        "charge_cost": 38.17299
+      }
+    ]
+  },
+  {
+    "start_id": 2,
+    "dest": [
+      {
+        "finish_id": 0,
+        "duration": 1453,
+        "distance": 15655,
+        "charge_cost": 6.809925
+      },
+      {
+        "finish_id": 1,
+        "duration": 3633,
+        "distance": 71832,
+        "charge_cost": 31.24692
+      },
+      {
+        "finish_id": 3,
+        "duration": 1351,
+        "distance": 19217,
+        "charge_cost": 8.359395
+      },
+      {
+        "finish_id": 4,
+        "duration": 798,
+        "distance": 5085,
+        "charge_cost": 2.211975
+      },
+      {
+        "finish_id": 5,
+        "duration": 1127,
+        "distance": 9408,
+        "charge_cost": 4.09248
+      },
+      {
+        "finish_id": 6,
+        "duration": 3518,
+        "distance": 71317,
+        "charge_cost": 31.022895000000002
+      },
+      {
+        "finish_id": 7,
+        "duration": 1246,
+        "distance": 11051,
+        "charge_cost": 4.807185
+      },
+      {
+        "finish_id": 8,
+        "duration": 706,
+        "distance": 6695,
+        "charge_cost": 2.912325
+      },
+      {
+        "finish_id": 9,
+        "duration": 458,
+        "distance": 2847,
+        "charge_cost": 1.238445
+      },
+      {
+        "finish_id": 10,
+        "duration": 813,
+        "distance": 5367,
+        "charge_cost": 2.334645
+      },
+      {
+        "finish_id": 11,
+        "duration": 401,
+        "distance": 3125,
+        "charge_cost": 1.359375
+      },
+      {
+        "finish_id": 12,
+        "duration": 1033,
+        "distance": 6659,
+        "charge_cost": 2.896665
+      },
+      {
+        "finish_id": 13,
+        "duration": 2966,
+        "distance": 64953,
+        "charge_cost": 28.254555
+      },
+      {
+        "finish_id": 14,
+        "duration": 979,
+        "distance": 11135,
+        "charge_cost": 4.843725
+      }
+    ]
+  },
+  {
+    "start_id": 3,
+    "dest": [
+      {
+        "finish_id": 0,
+        "duration": 756,
+        "distance": 6945,
+        "charge_cost": 3.021075
+      },
+      {
+        "finish_id": 1,
+        "duration": 2917,
+        "distance": 61868,
+        "charge_cost": 26.91258
+      },
+      {
+        "finish_id": 2,
+        "duration": 1424,
+        "distance": 19222,
+        "charge_cost": 8.36157
+      },
+      {
+        "finish_id": 4,
+        "duration": 1408,
+        "distance": 21088,
+        "charge_cost": 9.17328
+      },
+      {
+        "finish_id": 5,
+        "duration": 888,
+        "distance": 7453,
+        "charge_cost": 3.242055
+      },
+      {
+        "finish_id": 6,
+        "duration": 2803,
+        "distance": 61353,
+        "charge_cost": 26.688555
+      },
+      {
+        "finish_id": 7,
+        "duration": 1610,
+        "distance": 18822,
+        "charge_cost": 8.187570000000001
+      },
+      {
+        "finish_id": 8,
+        "duration": 1008,
+        "distance": 15320,
+        "charge_cost": 6.6642
+      },
+      {
+        "finish_id": 9,
+        "duration": 1266,
+        "distance": 20571,
+        "charge_cost": 8.948385
+      },
+      {
+        "finish_id": 10,
+        "duration": 2066,
+        "distance": 27279,
+        "charge_cost": 11.866365
+      },
+      {
+        "finish_id": 11,
+        "duration": 1432,
+        "distance": 11493,
+        "charge_cost": 4.999455
+      },
+      {
+        "finish_id": 12,
+        "duration": 1233,
+        "distance": 9129,
+        "charge_cost": 3.971115
+      },
+      {
+        "finish_id": 13,
+        "duration": 2250,
+        "distance": 54989,
+        "charge_cost": 23.920215
+      },
+      {
+        "finish_id": 14,
+        "duration": 1962,
+        "distance": 29309,
+        "charge_cost": 12.749415
+      }
+    ]
+  },
+  {
+    "start_id": 4,
+    "dest": [
+      {
+        "finish_id": 0,
+        "duration": 1133,
+        "distance": 13047,
+        "charge_cost": 5.675445
+      },
+      {
+        "finish_id": 1,
+        "duration": 3314,
+        "distance": 69224,
+        "charge_cost": 30.11244
+      },
+      {
+        "finish_id": 2,
+        "duration": 836,
+        "distance": 5882,
+        "charge_cost": 2.55867
+      },
+      {
+        "finish_id": 3,
+        "duration": 1289,
+        "distance": 20351,
+        "charge_cost": 8.852685
+      },
+      {
+        "finish_id": 5,
+        "duration": 1165,
+        "distance": 7102,
+        "charge_cost": 3.08937
+      },
+      {
+        "finish_id": 6,
+        "duration": 3199,
+        "distance": 68709,
+        "charge_cost": 29.888415
+      },
+      {
+        "finish_id": 7,
+        "duration": 864,
+        "distance": 6211,
+        "charge_cost": 2.701785
+      },
+      {
+        "finish_id": 8,
+        "duration": 1403,
+        "distance": 12104,
+        "charge_cost": 5.26524
+      },
+      {
+        "finish_id": 9,
+        "duration": 432,
+        "distance": 2448,
+        "charge_cost": 1.06488
+      },
+      {
+        "finish_id": 10,
+        "duration": 1211,
+        "distance": 8996,
+        "charge_cost": 3.91326
+      },
+      {
+        "finish_id": 11,
+        "duration": 853,
+        "distance": 4582,
+        "charge_cost": 1.99317
+      },
+      {
+        "finish_id": 12,
+        "duration": 682,
+        "distance": 4019,
+        "charge_cost": 1.748265
+      },
+      {
+        "finish_id": 13,
+        "duration": 2646,
+        "distance": 62345,
+        "charge_cost": 27.120075
+      },
+      {
+        "finish_id": 14,
+        "duration": 1460,
+        "distance": 15020,
+        "charge_cost": 6.5337
+      }
+    ]
+  },
+  {
+    "start_id": 5,
+    "dest": [
+      {
+        "finish_id": 0,
+        "duration": 1054,
+        "distance": 9026,
+        "charge_cost": 3.92631
+      },
+      {
+        "finish_id": 1,
+        "duration": 3348,
+        "distance": 63765,
+        "charge_cost": 27.737775
+      },
+      {
+        "finish_id": 2,
+        "duration": 1279,
+        "distance": 10022,
+        "charge_cost": 4.35957
+      },
+      {
+        "finish_id": 3,
+        "duration": 926,
+        "distance": 7469,
+        "charge_cost": 3.249015
+      },
+      {
+        "finish_id": 4,
+        "duration": 1351,
+        "distance": 7864,
+        "charge_cost": 3.42084
+      },
+      {
+        "finish_id": 6,
+        "duration": 3233,
+        "distance": 63250,
+        "charge_cost": 27.51375
+      },
+      {
+        "finish_id": 7,
+        "duration": 1606,
+        "distance": 17181,
+        "charge_cost": 7.4737350000000005
+      },
+      {
+        "finish_id": 8,
+        "duration": 1498,
+        "distance": 11511,
+        "charge_cost": 5.007285
+      },
+      {
+        "finish_id": 9,
+        "duration": 1312,
+        "distance": 7860,
+        "charge_cost": 3.4191
+      },
+      {
+        "finish_id": 10,
+        "duration": 1923,
+        "distance": 17343,
+        "charge_cost": 7.544205
+      },
+      {
+        "finish_id": 11,
+        "duration": 1186,
+        "distance": 7545,
+        "charge_cost": 3.282075
+      },
+      {
+        "finish_id": 12,
+        "duration": 818,
+        "distance": 4063,
+        "charge_cost": 1.7674050000000001
+      },
+      {
+        "finish_id": 13,
+        "duration": 2681,
+        "distance": 56886,
+        "charge_cost": 24.74541
+      },
+      {
+        "finish_id": 14,
+        "duration": 1819,
+        "distance": 19374,
+        "charge_cost": 8.42769
+      }
+    ]
+  },
+  {
+    "start_id": 6,
+    "dest": [
+      {
+        "finish_id": 0,
+        "duration": 2704,
+        "distance": 58135,
+        "charge_cost": 25.288725
+      },
+      {
+        "finish_id": 1,
+        "duration": 248,
+        "distance": 1016,
+        "charge_cost": 0.44196
+      },
+      {
+        "finish_id": 2,
+        "duration": 3581,
+        "distance": 71118,
+        "charge_cost": 30.93633
+      },
+      {
+        "finish_id": 3,
+        "duration": 2763,
+        "distance": 61023,
+        "charge_cost": 26.545005
+      },
+      {
+        "finish_id": 4,
+        "duration": 3256,
+        "distance": 68564,
+        "charge_cost": 29.82534
+      },
+      {
+        "finish_id": 5,
+        "duration": 3141,
+        "distance": 62594,
+        "charge_cost": 27.22839
+      },
+      {
+        "finish_id": 7,
+        "duration": 3394,
+        "distance": 71068,
+        "charge_cost": 30.91458
+      },
+      {
+        "finish_id": 8,
+        "duration": 3257,
+        "distance": 73029,
+        "charge_cost": 31.767615
+      },
+      {
+        "finish_id": 9,
+        "duration": 3114,
+        "distance": 68047,
+        "charge_cost": 29.600445
+      },
+      {
+        "finish_id": 10,
+        "duration": 4061,
+        "distance": 75037,
+        "charge_cost": 32.641095
+      },
+      {
+        "finish_id": 11,
+        "duration": 3347,
+        "distance": 69181,
+        "charge_cost": 30.093735
+      },
+      {
+        "finish_id": 12,
+        "duration": 3210,
+        "distance": 68139,
+        "charge_cost": 29.640465
+      },
+      {
+        "finish_id": 13,
+        "duration": 885,
+        "distance": 8547,
+        "charge_cost": 3.717945
+      },
+      {
+        "finish_id": 14,
+        "duration": 4211,
+        "distance": 87018,
+        "charge_cost": 37.85283
+      }
+    ]
+  },
+  {
+    "start_id": 7,
+    "dest": [
+      {
+        "finish_id": 0,
+        "duration": 1376,
+        "distance": 15227,
+        "charge_cost": 6.623745
+      },
+      {
+        "finish_id": 1,
+        "duration": 3629,
+        "distance": 72268,
+        "charge_cost": 31.43658
+      },
+      {
+        "finish_id": 2,
+        "duration": 1333,
+        "distance": 11385,
+        "charge_cost": 4.952475
+      },
+      {
+        "finish_id": 3,
+        "duration": 1713,
+        "distance": 18739,
+        "charge_cost": 8.151465
+      },
+      {
+        "finish_id": 4,
+        "duration": 1031,
+        "distance": 6402,
+        "charge_cost": 2.78487
+      },
+      {
+        "finish_id": 5,
+        "duration": 1622,
+        "distance": 16928,
+        "charge_cost": 7.3636800000000004
+      },
+      {
+        "finish_id": 6,
+        "duration": 3515,
+        "distance": 71753,
+        "charge_cost": 31.212555000000002
+      },
+      {
+        "finish_id": 8,
+        "duration": 1901,
+        "distance": 17607,
+        "charge_cost": 7.659045
+      },
+      {
+        "finish_id": 9,
+        "duration": 1128,
+        "distance": 9695,
+        "charge_cost": 4.217325
+      },
+      {
+        "finish_id": 10,
+        "duration": 1257,
+        "distance": 11718,
+        "charge_cost": 5.09733
+      },
+      {
+        "finish_id": 11,
+        "duration": 1703,
+        "distance": 10499,
+        "charge_cost": 4.567065
+      },
+      {
+        "finish_id": 12,
+        "duration": 1531,
+        "distance": 9936,
+        "charge_cost": 4.32216
+      },
+      {
+        "finish_id": 13,
+        "duration": 2962,
+        "distance": 65389,
+        "charge_cost": 28.444215
+      },
+      {
+        "finish_id": 14,
+        "duration": 1878,
+        "distance": 20244,
+        "charge_cost": 8.80614
+      }
+    ]
+  },
+  {
+    "start_id": 8,
+    "dest": [
+      {
+        "finish_id": 0,
+        "duration": 1310,
+        "distance": 20368,
+        "charge_cost": 8.86008
+      },
+      {
+        "finish_id": 1,
+        "duration": 3457,
+        "distance": 74151,
+        "charge_cost": 32.255685
+      },
+      {
+        "finish_id": 2,
+        "duration": 758,
+        "distance": 6494,
+        "charge_cost": 2.82489
+      },
+      {
+        "finish_id": 3,
+        "duration": 1106,
+        "distance": 15977,
+        "charge_cost": 6.949995
+      },
+      {
+        "finish_id": 4,
+        "duration": 1392,
+        "distance": 11305,
+        "charge_cost": 4.917675
+      },
+      {
+        "finish_id": 5,
+        "duration": 1409,
+        "distance": 11199,
+        "charge_cost": 4.871565
+      },
+      {
+        "finish_id": 6,
+        "duration": 3343,
+        "distance": 73636,
+        "charge_cost": 32.03166
+      },
+      {
+        "finish_id": 7,
+        "duration": 1840,
+        "distance": 17271,
+        "charge_cost": 7.512885
+      },
+      {
+        "finish_id": 9,
+        "duration": 1052,
+        "distance": 9067,
+        "charge_cost": 3.9441450000000002
+      },
+      {
+        "finish_id": 10,
+        "duration": 1418,
+        "distance": 13761,
+        "charge_cost": 5.986035
+      },
+      {
+        "finish_id": 11,
+        "duration": 818,
+        "distance": 7667,
+        "charge_cost": 3.335145
+      },
+      {
+        "finish_id": 12,
+        "duration": 1409,
+        "distance": 10384,
+        "charge_cost": 4.51704
+      },
+      {
+        "finish_id": 13,
+        "duration": 2790,
+        "distance": 67272,
+        "charge_cost": 29.26332
+      },
+      {
+        "finish_id": 14,
+        "duration": 1315,
+        "distance": 15792,
+        "charge_cost": 6.86952
+      }
+    ]
+  },
+  {
+    "start_id": 9,
+    "dest": [
+      {
+        "finish_id": 0,
+        "duration": 1030,
+        "distance": 12811,
+        "charge_cost": 5.572785
+      },
+      {
+        "finish_id": 1,
+        "duration": 3210,
+        "distance": 68987,
+        "charge_cost": 30.009345
+      },
+      {
+        "finish_id": 2,
+        "duration": 455,
+        "distance": 2935,
+        "charge_cost": 1.276725
+      },
+      {
+        "finish_id": 3,
+        "duration": 1185,
+        "distance": 20114,
+        "charge_cost": 8.74959
+      },
+      {
+        "finish_id": 4,
+        "duration": 494,
+        "distance": 3056,
+        "charge_cost": 1.32936
+      },
+      {
+        "finish_id": 5,
+        "duration": 1085,
+        "distance": 7755,
+        "charge_cost": 3.373425
+      },
+      {
+        "finish_id": 6,
+        "duration": 3096,
+        "distance": 68472,
+        "charge_cost": 29.78532
+      },
+      {
+        "finish_id": 7,
+        "duration": 965,
+        "distance": 9305,
+        "charge_cost": 4.047675
+      },
+      {
+        "finish_id": 8,
+        "duration": 1022,
+        "distance": 9157,
+        "charge_cost": 3.983295
+      },
+      {
+        "finish_id": 10,
+        "duration": 1055,
+        "distance": 7413,
+        "charge_cost": 3.224655
+      },
+      {
+        "finish_id": 11,
+        "duration": 570,
+        "distance": 2866,
+        "charge_cost": 1.24671
+      },
+      {
+        "finish_id": 12,
+        "duration": 610,
+        "distance": 3814,
+        "charge_cost": 1.65909
+      },
+      {
+        "finish_id": 13,
+        "duration": 2543,
+        "distance": 62108,
+        "charge_cost": 27.01698
+      },
+      {
+        "finish_id": 14,
+        "duration": 1223,
+        "distance": 12726,
+        "charge_cost": 5.53581
+      }
+    ]
+  },
+  {
+    "start_id": 10,
+    "dest": [
+      {
+        "finish_id": 0,
+        "duration": 1980,
+        "distance": 19545,
+        "charge_cost": 8.502075
+      },
+      {
+        "finish_id": 1,
+        "duration": 4161,
+        "distance": 75721,
+        "charge_cost": 32.938635
+      },
+      {
+        "finish_id": 2,
+        "duration": 780,
+        "distance": 5485,
+        "charge_cost": 2.385975
+      },
+      {
+        "finish_id": 3,
+        "duration": 1948,
+        "distance": 26519,
+        "charge_cost": 11.535765
+      },
+      {
+        "finish_id": 4,
+        "duration": 1355,
+        "distance": 9584,
+        "charge_cost": 4.16904
+      },
+      {
+        "finish_id": 5,
+        "duration": 1724,
+        "distance": 16711,
+        "charge_cost": 7.269285
+      },
+      {
+        "finish_id": 6,
+        "duration": 4046,
+        "distance": 75207,
+        "charge_cost": 32.715045
+      },
+      {
+        "finish_id": 7,
+        "duration": 1172,
+        "distance": 10993,
+        "charge_cost": 4.781955
+      },
+      {
+        "finish_id": 8,
+        "duration": 1254,
+        "distance": 13082,
+        "charge_cost": 5.69067
+      },
+      {
+        "finish_id": 9,
+        "duration": 1051,
+        "distance": 7109,
+        "charge_cost": 3.092415
+      },
+      {
+        "finish_id": 11,
+        "duration": 998,
+        "distance": 10428,
+        "charge_cost": 4.53618
+      },
+      {
+        "finish_id": 12,
+        "duration": 1561,
+        "distance": 10548,
+        "charge_cost": 4.58838
+      },
+      {
+        "finish_id": 13,
+        "duration": 3494,
+        "distance": 68842,
+        "charge_cost": 29.946270000000002
+      },
+      {
+        "finish_id": 14,
+        "duration": 980,
+        "distance": 11250,
+        "charge_cost": 4.89375
+      }
+    ]
+  },
+  {
+    "start_id": 11,
+    "dest": [
+      {
+        "finish_id": 0,
+        "duration": 1248,
+        "distance": 13905,
+        "charge_cost": 6.048675
+      },
+      {
+        "finish_id": 1,
+        "duration": 3428,
+        "distance": 70082,
+        "charge_cost": 30.48567
+      },
+      {
+        "finish_id": 2,
+        "duration": 452,
+        "distance": 3363,
+        "charge_cost": 1.462905
+      },
+      {
+        "finish_id": 3,
+        "duration": 1334,
+        "distance": 18896,
+        "charge_cost": 8.21976
+      },
+      {
+        "finish_id": 4,
+        "duration": 907,
+        "distance": 5046,
+        "charge_cost": 2.19501
+      },
+      {
+        "finish_id": 5,
+        "duration": 1121,
+        "distance": 7468,
+        "charge_cost": 3.24858
+      },
+      {
+        "finish_id": 6,
+        "duration": 3313,
+        "distance": 69567,
+        "charge_cost": 30.261645
+      },
+      {
+        "finish_id": 7,
+        "duration": 1424,
+        "distance": 12487,
+        "charge_cost": 5.431845
+      },
+      {
+        "finish_id": 8,
+        "duration": 857,
+        "distance": 6274,
+        "charge_cost": 2.72919
+      },
+      {
+        "finish_id": 9,
+        "duration": 638,
+        "distance": 3432,
+        "charge_cost": 1.49292
+      },
+      {
+        "finish_id": 10,
+        "duration": 1095,
+        "distance": 10684,
+        "charge_cost": 4.64754
+      },
+      {
+        "finish_id": 12,
+        "duration": 818,
+        "distance": 4403,
+        "charge_cost": 1.915305
+      },
+      {
+        "finish_id": 13,
+        "duration": 2761,
+        "distance": 63203,
+        "charge_cost": 27.493305
+      },
+      {
+        "finish_id": 14,
+        "duration": 992,
+        "distance": 12715,
+        "charge_cost": 5.531025
+      }
+    ]
+  },
+  {
+    "start_id": 12,
+    "dest": [
+      {
+        "finish_id": 0,
+        "duration": 1131,
+        "distance": 12764,
+        "charge_cost": 5.55234
+      },
+      {
+        "finish_id": 1,
+        "duration": 3311,
+        "distance": 68941,
+        "charge_cost": 29.989335
+      },
+      {
+        "finish_id": 2,
+        "duration": 1138,
+        "distance": 7078,
+        "charge_cost": 3.07893
+      },
+      {
+        "finish_id": 3,
+        "duration": 1209,
+        "distance": 8974,
+        "charge_cost": 3.90369
+      },
+      {
+        "finish_id": 4,
+        "duration": 778,
+        "distance": 4490,
+        "charge_cost": 1.95315
+      },
+      {
+        "finish_id": 5,
+        "duration": 722,
+        "distance": 3772,
+        "charge_cost": 1.64082
+      },
+      {
+        "finish_id": 6,
+        "duration": 3197,
+        "distance": 68426,
+        "charge_cost": 29.76531
+      },
+      {
+        "finish_id": 7,
+        "duration": 1295,
+        "distance": 11931,
+        "charge_cost": 5.189985
+      },
+      {
+        "finish_id": 8,
+        "duration": 1370,
+        "distance": 9560,
+        "charge_cost": 4.1586
+      },
+      {
+        "finish_id": 9,
+        "duration": 739,
+        "distance": 4486,
+        "charge_cost": 1.95141
+      },
+      {
+        "finish_id": 10,
+        "duration": 1618,
+        "distance": 10998,
+        "charge_cost": 4.78413
+      },
+      {
+        "finish_id": 11,
+        "duration": 875,
+        "distance": 4566,
+        "charge_cost": 1.98621
+      },
+      {
+        "finish_id": 13,
+        "duration": 2644,
+        "distance": 62062,
+        "charge_cost": 26.99697
+      },
+      {
+        "finish_id": 14,
+        "duration": 1764,
+        "distance": 17072,
+        "charge_cost": 7.4263200000000005
+      }
+    ]
+  },
+  {
+    "start_id": 13,
+    "dest": [
+      {
+        "finish_id": 0,
+        "duration": 2154,
+        "distance": 51795,
+        "charge_cost": 22.530825
+      },
+      {
+        "finish_id": 1,
+        "duration": 1001,
+        "distance": 9092,
+        "charge_cost": 3.95502
+      },
+      {
+        "finish_id": 2,
+        "duration": 3032,
+        "distance": 64777,
+        "charge_cost": 28.177995
+      },
+      {
+        "finish_id": 3,
+        "duration": 2213,
+        "distance": 54682,
+        "charge_cost": 23.78667
+      },
+      {
+        "finish_id": 4,
+        "duration": 2706,
+        "distance": 62223,
+        "charge_cost": 27.067005
+      },
+      {
+        "finish_id": 5,
+        "duration": 2592,
+        "distance": 56253,
+        "charge_cost": 24.470055
+      },
+      {
+        "finish_id": 6,
+        "duration": 877,
+        "distance": 8427,
+        "charge_cost": 3.665745
+      },
+      {
+        "finish_id": 7,
+        "duration": 2844,
+        "distance": 64728,
+        "charge_cost": 28.15668
+      },
+      {
+        "finish_id": 8,
+        "duration": 2708,
+        "distance": 66688,
+        "charge_cost": 29.00928
+      },
+      {
+        "finish_id": 9,
+        "duration": 2564,
+        "distance": 61706,
+        "charge_cost": 26.84211
+      },
+      {
+        "finish_id": 10,
+        "duration": 3511,
+        "distance": 68697,
+        "charge_cost": 29.883195
+      },
+      {
+        "finish_id": 11,
+        "duration": 2797,
+        "distance": 62841,
+        "charge_cost": 27.335835
+      },
+      {
+        "finish_id": 12,
+        "duration": 2660,
+        "distance": 61798,
+        "charge_cost": 26.88213
+      },
+      {
+        "finish_id": 14,
+        "duration": 3661,
+        "distance": 80677,
+        "charge_cost": 35.094495
+      }
+    ]
+  },
+  {
+    "start_id": 14,
+    "dest": [
+      {
+        "finish_id": 0,
+        "duration": 2158,
+        "distance": 31609,
+        "charge_cost": 13.749915
+      },
+      {
+        "finish_id": 1,
+        "duration": 4305,
+        "distance": 85392,
+        "charge_cost": 37.14552
+      },
+      {
+        "finish_id": 2,
+        "duration": 1002,
+        "distance": 10805,
+        "charge_cost": 4.700175
+      },
+      {
+        "finish_id": 3,
+        "duration": 1954,
+        "distance": 27218,
+        "charge_cost": 11.83983
+      },
+      {
+        "finish_id": 4,
+        "duration": 1628,
+        "distance": 16505,
+        "charge_cost": 7.1796750000000005
+      },
+      {
+        "finish_id": 5,
+        "duration": 1780,
+        "distance": 19151,
+        "charge_cost": 8.330685
+      },
+      {
+        "finish_id": 6,
+        "duration": 4241,
+        "distance": 86618,
+        "charge_cost": 37.67883
+      },
+      {
+        "finish_id": 7,
+        "duration": 1808,
+        "distance": 19506,
+        "charge_cost": 8.48511
+      },
+      {
+        "finish_id": 8,
+        "duration": 1310,
+        "distance": 15522,
+        "charge_cost": 6.75207
+      },
+      {
+        "finish_id": 9,
+        "duration": 1288,
+        "distance": 14267,
+        "charge_cost": 6.206145
+      },
+      {
+        "finish_id": 10,
+        "duration": 1167,
+        "distance": 11885,
+        "charge_cost": 5.169975
+      },
+      {
+        "finish_id": 11,
+        "duration": 1054,
+        "distance": 12867,
+        "charge_cost": 5.597145
+      },
+      {
+        "finish_id": 12,
+        "duration": 1837,
+        "distance": 17221,
+        "charge_cost": 7.491135
+      },
+      {
+        "finish_id": 13,
+        "duration": 3688,
+        "distance": 80254,
+        "charge_cost": 34.91049
+      }
+    ]
+  }
+]

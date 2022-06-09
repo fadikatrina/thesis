@@ -4,6 +4,9 @@ import copy
 
 class Manual:
 
+	def __init__(self, Mode):
+		pass
+
 	def assign_cars(self, sim: Simulation):
 		for trip in sim.announced_trip_list:
 			if not trip.has_a_car():

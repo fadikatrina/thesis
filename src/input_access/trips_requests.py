@@ -18,5 +18,5 @@ def parse_trips_into_requesttriplist(json_trips):
 
 
 def get_trip_requests(file_name):
-	f = open(f'../../input/trips_requests/{file_name}.json')
+	f = open(f'../input/trips_requests/{file_name}.json')
 	return parse_trips_into_requesttriplist(json.load(f)["trips"])

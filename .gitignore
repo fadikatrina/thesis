@@ -152,3 +152,5 @@ cython_debug/
 .idea/
 .DS_Store
 /output/
+/scripts/google_maps_scraping/viz
+/scripts/google_maps_scraping/scrape_dump/

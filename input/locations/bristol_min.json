@@ -1,0 +1,19 @@
+[
+  { "id": 0,
+    "site_name": "Bradley Stoke Leisure Centre",
+    "latitude": 51.53552,
+    "longitude": -2.54594
+  },
+  {
+    "id": 1,
+    "site_name": "Town Centre East",
+    "latitude": 51.89936,
+    "longitude": -2.0706
+  },
+  {
+    "id": 2,
+    "site_name": "Tobacco Factory",
+    "latitude": 51.44254,
+    "longitude": -2.61318
+  }
+]

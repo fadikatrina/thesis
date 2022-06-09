@@ -14,12 +14,13 @@ class Main:
 	def __init__(self, algorithm_class="FirstAvailable", trip_requests_filename="default_unassigned",
 	             mod_filename="bristol", log_filename="default", output_results_filename="default",
 	             check_results_filename="default", general_config_filename="default",
-	             car_charge_config_filename="default", station_metrics_filename="bristol_metrics_ogpaper"):
+	             car_charge_config_filename="default", station_metrics_filename="bristol_metrics_ogpaper",
+	             algo_car_picking_mode=0):
 
 		# dynamically importing the needed algorithm class based on its name
 		# https://stackoverflow.com/questions/4821104/dynamic-instantiation-from-string-name-of-a-class-in-dynamically-imported-module
 		algo_class = getattr(importlib.import_module(f"src.algorithms.{algorithm_class}"), algorithm_class)
-		self.algo = algo_class()
+		self.algo = algo_class(algo_car_picking_mode)
 
 		# initialise all the input and output data/variables/files of the simulation
 		self.output_results_filename = output_results_filename
@@ -46,11 +47,13 @@ class Main:
 
 if __name__ == "__main__":
 	Main(
-		algorithm_class="LongMode",
-		trip_requests_filename="test_long_mode",
-		general_config_filename="test_long_mode",
+		algorithm_class="ShortMode",
+		trip_requests_filename="default",
+		general_config_filename="default",
 		car_charge_config_filename="test_long_mode",
-		check_results_filename="test_long_mode",
-		log_filename="test_long_mode",
-		output_results_filename="test_long_mode",
+		check_results_filename="nothing",
+		log_filename="debug_google",
+		output_results_filename="debug_google",
+		station_metrics_filename="google_average_pessimistic",
+		algo_car_picking_mode=3
 	)

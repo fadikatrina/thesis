@@ -18,9 +18,9 @@ loggers = [sim_logger, sim_copy_logger, algo_first_available, algo_short_mode, a
 
 
 def config_logger(filename):
-    Path("../../output/logs").mkdir(parents=True, exist_ok=True)
+    Path("../output/logs").mkdir(parents=True, exist_ok=True)
 
-    fileh = logging.FileHandler(f"../../output/logs/{filename}.log", 'a')
+    fileh = logging.FileHandler(f"../output/logs/{filename}.log", 'a')
     formatter = logging.Formatter('[%(filename)s %(funcName)s()]   %(message)s')
     fileh.setFormatter(formatter)
 
