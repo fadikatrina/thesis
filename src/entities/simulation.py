@@ -41,10 +41,12 @@ class Simulation:
 			self.stations.append(Station(ml["id"], ml["site_name"], ml["longitude"], ml["latitude"]))
 
 	# MAIN SIMULATION FUNCTION, the centre of the universe of this simulation
-	def advance_simulation(self):
+	def advance_simulation(self, if_no_trips=None):
 		self.end_trips()
 		if self.check_simulation_ended():
 			last_trip_time = self.end_trips(True)
+			if last_trip_time == 0:
+				last_trip_time = if_no_trips
 			self.set_new_clock_time(last_trip_time)
 			return
 		self.check_number_of_cars_constant()
@@ -130,7 +132,7 @@ class Simulation:
 	def advance_simulation_to_time(self, time):
 		self.l.debug(f"FAST FORWARDING TO ({time})")
 		while self.simulation_clock < time:
-			self.advance_simulation()
+			self.advance_simulation(time)
 
 	# changes the simulation clock, checks the new time is not in the past
 	def set_new_clock_time(self, new_time):

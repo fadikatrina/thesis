@@ -73,6 +73,12 @@ class ShortMode:
 				sim2.set_logger(sim_copy_logger)
 				sim2.advance_simulation_to_time(trip.start_time)
 				station = sim2.stations[trip.start_station_id]
+				sim3 = copy.deepcopy(sim2)
+				sim3.advance_simulation_to_time(trip.end_time)
+				dest_station = sim3.stations[trip.end_station_id]
+				if dest_station.is_full():
+					self.l.info(f"END STATION ({dest_station}) WILL BE FULL SO CANT SCHEDULE TRIP ({trip})")
+					continue
 				available_cars = station.cars
 				available_cars = self.remove_cars_not_enough_charge(available_cars, trip.charge_cost)
 				available_cars = self.remove_cars_with_future_trip(available_cars, sim.announced_trip_list)

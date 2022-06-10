@@ -38,5 +38,8 @@ class Station:
 			raise RuntimeError(f"Can not add CAR ({car}) in STATION ({self}) because max capacity reached")
 		self.cars.append(car)
 
+	def is_full(self):
+		return len(self.cars) == self.max_capacity
+
 	def __str__(self):
 		return f"Station ID {self.id_} NAME {self.name} CARS# {len(self.cars)}"
