@@ -19,7 +19,7 @@
 		                                                            // `bristol_metrics_ogpaper` the metrics as calculated in the original paper, not accurate though, because could not reproduce their method fully due to some missing constants in the paper and code
 
 		// these will be created in a folder called `output` in root, during and after the simulation respectively
-		log_filename="example",                                     // logs, levels can be configured in `src.helpers.logger`
+		log_filename="example",                                     // logs, levels can be configured in `source.helpers.logger`
 		output_results_filename="example",                          // writes a summary of all the configs, trips, end stations of the vehicles 
 
 ## Algorithms Configuration Settings

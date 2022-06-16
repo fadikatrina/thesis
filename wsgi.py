@@ -6,7 +6,7 @@ import json
 
 application = Flask(__name__,  static_url_path='')
 
-os.chdir("./src")
+os.chdir("./source")
 
 
 @application.route("/", methods=['GET', 'POST', 'DELETE', 'PATCH'])

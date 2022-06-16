@@ -1,4 +1,4 @@
-from src.main import Main
+from source.main import Main
 import json
 import os
 
@@ -6,8 +6,8 @@ import os
 def start_experiments(experiments=None):
 
 	cwd = os.getcwd()
-	if cwd[:-3] != "src":
-		os.chdir("../src")
+	if cwd[:-3] != "source":
+		os.chdir("../source")
 
 	if experiments is None:
 		f = open(f'../experiments/experiments.json')

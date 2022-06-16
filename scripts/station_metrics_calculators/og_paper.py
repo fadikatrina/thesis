@@ -5,7 +5,7 @@
 # while the categories assignment of the stations is available in the code, this scalar multiplier was not found
 # anywhere in the repo, therefore its not included in these calculations, contacting the authors did not help
 
-from src.entities.simulation import Simulation
+from source.entities.simulation import Simulation
 import json
 import math
 
