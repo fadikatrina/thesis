@@ -9,7 +9,11 @@
         "output_results_filename" : "system_check",
         "check_results_filename" : "default",
         "general_config_filename" : "default",
-        "car_charge_config_filename" : "default"
+        "car_charge_config_filename" : "default",
+        "station_metrics_filename" : "bristol_metrics_ogpaper",
+        "algo_config": {
+            "pick_strategy": 2
+        }
     }
   },
   {
@@ -22,7 +26,11 @@
 		"car_charge_config_filename" : "test_short_mode",
 		"check_results_filename" : "nothing",
 		"log_filename" : "test_short_mode",
-		"output_results_filename" : "test_short_mode"
+		"output_results_filename" : "test_short_mode",
+        "station_metrics_filename" : "bristol_metrics_ogpaper",
+        "algo_config": {
+            "pick_strategy": 2
+        }
     }
   },
   {
@@ -30,12 +38,16 @@
     "number_of_runs": 1,
     "config" : {
       	"algorithm_class" : "LongMode",
-        "trip_requests_filename" : "test_long_mode",
+        "trip_requests_filename" : "test_short_mode",
         "log_filename" : "test_long_mode",
         "output_results_filename" : "test_long_mode",
-        "check_results_filename" : "test_long_mode",
+        "check_results_filename" : "nothing",
         "general_config_filename" : "test_long_mode",
-        "car_charge_config_filename" : "test_long_mode"
+        "car_charge_config_filename" : "test_long_mode",
+        "station_metrics_filename" : "bristol_metrics_ogpaper",
+        "algo_config": {
+            "pick_strategy": 2
+        }
     }
   }
 ]

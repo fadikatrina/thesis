@@ -14,7 +14,7 @@ class Main:
 
 	def __init__(self, algorithm_class="FirstAvailable", trip_requests_filename="default_unassigned",
 	             mod_filename="bristol", log_filename="default", output_results_filename="default",
-	             check_results_filename="default", general_config_filename="default",
+	             check_results_filename="nothing", general_config_filename="default",
 	             car_charge_config_filename="default", station_metrics_filename="bristol_metrics_ogpaper",
 	             algo_config={"strategy": 1}, assign_cars_only_after_all_trips_announced=False):
 
