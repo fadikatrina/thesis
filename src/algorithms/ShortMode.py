@@ -8,16 +8,17 @@ import random
 
 class ShortMode:
 
-	def __init__(self, algo_car_picking_mode):
-		self.CAR_PICKING_MODE = algo_car_picking_mode
+	def __init__(self, config, tracker):
+		self.CAR_PICKING_MODE = config["pick_strategy"]
 		self.l = algo_short_mode
+		self.tracker = tracker
 
 	def set_logger(self, new_logger):
 		self.l = new_logger
 
-	def remove_cars_with_future_trip(self, cars, trip_list):
+	def remove_cars_with_future_trip(self, cars, trip_list, trip_start_time):
 		self.l.debug(f"TRIPLIST ({[str(x) for x in trip_list]}) CARS ({[str(x) for x in cars]})")
-		res = [x for x in cars if len(trip_list.get_trips_using_car(x.id_)) == 0]
+		res = [x for x in cars if len(trip_list.get_trips_using_car(x.id_, trip_start_time)) == 0]
 		self.l.debug(f"WITHOUT FUTURE ROUTES CARS ({[str(x) for x in res]})")
 		return res
 
@@ -62,10 +63,14 @@ class ShortMode:
 				return self.get_car_with_most_charge(available_cars)
 			elif self.CAR_PICKING_MODE == 2:
 				return self.get_car_with_least_charge(available_cars)
-			else:
+			elif self.CAR_PICKING_MODE == 3:
 				return self.get_car_based_on_station_charge_level(available_cars, sim, start_station_id, end_station_id)
+			else:
+				raise ValueError(
+					f"Invalid value of ({self.should_assign_option}) for CAR_PICKING_MODE in Short Algo")
 
 	def assign_cars(self, sim: Simulation, avoid_car_id=None):
+		count_assigned = 0
 		for trip in sim.announced_trip_list:
 			if not trip.has_a_car():
 				sim2 = copy.deepcopy(sim)
@@ -81,7 +86,7 @@ class ShortMode:
 					continue
 				available_cars = station.cars
 				available_cars = self.remove_cars_not_enough_charge(available_cars, trip.charge_cost)
-				available_cars = self.remove_cars_with_future_trip(available_cars, sim.announced_trip_list)
+				available_cars = self.remove_cars_with_future_trip(available_cars, sim.announced_trip_list, trip.start_time)
 				if avoid_car_id:
 					available_cars = [x for x in available_cars if x.id_ != avoid_car_id]
 				if len(available_cars) == 0:
@@ -89,5 +94,7 @@ class ShortMode:
 					continue
 				trip.car_id = self.choose_car(available_cars, sim2, trip.start_station_id, trip.end_station_id).id_
 				self.l.info(f"ASSIGNED CAR ({trip.car_id}) FOR TRIP ({trip})")
+				count_assigned += 1
+		self.tracker.no_assignments_short.append(count_assigned)
 		return sim.announced_trip_list
 

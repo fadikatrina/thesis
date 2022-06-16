@@ -45,18 +45,24 @@ class Simulation:
 		self.end_trips()
 		if self.check_simulation_ended():
 			last_trip_time = self.end_trips(True)
-			if last_trip_time == 0:
+			if last_trip_time == 0 or last_trip_time is None:
 				last_trip_time = if_no_trips
+				if last_trip_time is None:
+					return
 			self.set_new_clock_time(last_trip_time)
 			return
 		self.check_number_of_cars_constant()
 
 		if self.is_next_event_trip_request():
-			new_request = self.request_trip_list.pop(0)
-			self.l.info(f"NEW REQUEST ({new_request})")
-			self.check_new_announcing_trip_no_car_conflict(new_request)
-			self.announced_trip_list.append(new_request)
-			self.set_new_clock_time(new_request.request_time)
+			new_request = self.request_trip_list[0]
+			while self.request_trip_list[0].request_time == new_request.request_time:
+				new_request = self.request_trip_list.pop(0)
+				self.l.info(f"NEW REQUEST ({new_request})")
+				self.check_new_announcing_trip_no_car_conflict(new_request)
+				self.announced_trip_list.append(new_request)
+				self.set_new_clock_time(new_request.request_time)
+				if len(self.request_trip_list) == 0:
+					break
 		else:
 			current_trip = self.announced_trip_list.pop(0)
 			self.l.info(f"CURRENT TRIP ({current_trip})")
@@ -80,7 +86,7 @@ class Simulation:
 	def start_trip(self, trip):
 		self.l.info(f"STARTING TRIP ({trip})")
 		start_station = self.stations[trip.start_station_id]
-		car = start_station.remove_car(trip.car_id)
+		car = start_station.remove_car(trip.car_id, trip)
 		car.current_charge_level -= trip.charge_cost
 		assert car.current_charge_level >= 0
 		self.cars_in_progress_trip.append(car)
@@ -98,7 +104,7 @@ class Simulation:
 				self.l.info(f"ENDING TRIP ({trip})")
 				self.completed_trip_list.append(trip)
 				end_station = self.stations[trip.end_station_id]
-				self.cars_in_progress_trip, car = pop_from_list(self.cars_in_progress_trip, trip.car_id)
+				self.cars_in_progress_trip, car = pop_from_list(self.cars_in_progress_trip, trip.car_id, trip=trip)
 				car.last_trip_end_time = trip.end_time
 				end_station.add_car(car)
 				self.in_progress_trip_list.remove(trip)
@@ -203,12 +209,16 @@ class Simulation:
 		except RuntimeError:
 			raise RuntimeWarning(f"New request ({new_request}) CAR_ID ({car_id}) is not at the start station")
 
-	# helper function
+	# helper functions
 	def calculate_total_cars_no_in_stations(self):
 		count = 0
 		for station in self.stations:
 			count += len(station.cars)
 		return count
+
+	def get_all_cars(self):
+		cars_lists = [x.cars for x in self.stations]
+		return [x for xs in cars_lists for x in xs]
 
 	def __str__(self):
 		return f"Simulation STATIONS# {len(self.stations)}"

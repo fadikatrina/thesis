@@ -29,8 +29,8 @@ class Station:
 		if len(self.cars) > max_capacity:
 			raise ValueError("A station can not have more cars than max_capacity")
 
-	def remove_car(self, car_id):
-		self.cars, found_car = pop_from_list(self.cars, car_id)
+	def remove_car(self, car_id, trip):
+		self.cars, found_car = pop_from_list(self.cars, car_id, trip=trip)
 		return found_car
 
 	def add_car(self, car):
