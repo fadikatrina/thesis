@@ -33,6 +33,15 @@ def change():
     return "Changed"
 
 
+@application.route("/addtriprequestfile/<filename>", methods=['PUT'])
+def addtripreq(filename):
+    cwd = os.getcwd()
+    print(cwd)
+    with open(f'../input/trips_requests/exp/{filename}.json', 'w') as fp:
+        json.dump(request.json, fp)
+    return "Added"
+
+
 @application.route("/getfiles", methods=['GET'])
 def getfiles():
     shutil.make_archive('../experiments', 'zip', '../output')

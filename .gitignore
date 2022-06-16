@@ -155,6 +155,5 @@ cython_debug/
 /scripts/google_maps_scraping/viz
 /scripts/google_maps_scraping/scrape_dump/
 /scripts/trip_requests/input/
-/input/trips_requests/exp/
 
 /experiments.zip
