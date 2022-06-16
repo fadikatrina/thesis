@@ -157,3 +157,4 @@ cython_debug/
 /scripts/trip_requests/input/
 /input/trips_requests/exp/
 
+/experiments.zip

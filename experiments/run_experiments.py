@@ -3,12 +3,15 @@ import json
 import os
 
 
-def start_experiments():
-	f = open(f'./experiments/experiments.json')
-	experiments = json.load(f)
+def start_experiments(experiments=None):
 
-	os.chdir("./src")
+	cwd = os.getcwd()
+	if cwd[:-3] != "src":
+		os.chdir("../src")
 
+	if experiments is None:
+		f = open(f'../experiments/experiments.json')
+		experiments = json.load(f)
 
 	for experiment in experiments:
 		for run_no in range(experiment["number_of_runs"]):
