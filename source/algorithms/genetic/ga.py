@@ -7,6 +7,7 @@ from source.algorithms.genetic.visualise import visualise
 from source.algorithms.genetic.population import population
 from source.algorithms.genetic.individual import individual
 from source.algorithms.genetic.helpers import reset_simulation_cache
+from source.helpers.logger import algo_genetic as l
 
 
 class ga:
@@ -40,7 +41,6 @@ class ga:
                  populationSize=1000,
                  targetFitness=21,
                  genes='''abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ 1234567890, .-;:_!"#%&/()=?@${[]}''',
-                 target = "Fadi & Arabi are cool",
                  genesInEachInidivudal=21,
                  evaluationChoice = 1,
                  selectionChoice = 1,
@@ -50,8 +50,8 @@ class ga:
                  maxIterations = 500,
                  pOfCrossing = 0.9,
                  pOfMutating = 0.6,
-                 displayVisuals = False,
-                 printSummary = False,
+                 displayVisuals = True,
+                 printSummary = True,
                  printEval = False,
                  printSelect = False,
                  printCross = False,
@@ -59,7 +59,9 @@ class ga:
                  printPopulation = False,
                  replacement = True,
                  sim = None,
-                 genesAsArray = False):
+                 genesAsArray = False,
+                 image_filename="stats",
+                 count_uses = 0):
         if not numberToSelect: numberToSelect = int(populationSize/2)
         self.TARGET_FITNESS = targetFitness
         self.MAX_ITERATIONS = maxIterations
@@ -73,6 +75,8 @@ class ga:
         self.mutate = mutate(printMutate, mutateChoice)
         self.visual = visualise()
         self.select = select(selectionChoice, printSelect, numberToSelect, self.eval)
+        self.image_filename = image_filename
+        self.count_uses = count_uses
 
         if genes is not list: genes = list(genes)
         self.population = population(populationSize, self.eval, genes, genesInEachInidivudal, printPopulation, replacement=self.REPLACEMENT)
@@ -97,13 +101,10 @@ class ga:
             most_fit = self.population.getMostFitIndividuals()
             count = count + 1
 
-            if (self.PRINT_SUMMARY): self.printSummary(count, most_fit)
-            if (self.VISUALISE): self.visual.visualise(
-                    self.population.getPopulationTotalFitness() / self.population.getPopulationSize(),
-                    count
-                    )
+            if self.PRINT_SUMMARY: self.printSummary(count, most_fit)
+            if self.VISUALISE: self.visual.add_iteration(most_fit[0].getFitness(), count)
 
-        if(self.VISUALISE): self.visual.show()
+        if self.VISUALISE: self.visual.show(self.image_filename, self.count_uses)
 
         return most_fit
 
@@ -133,6 +134,4 @@ class ga:
         population_size = self.population.getPopulationSize()
         population_total_fitness = self.population.getPopulationTotalFitness()
 
-        print(count, ";Pop Size;", population_size, ";Pop Fitness;", population_total_fitness,
-              ";Avg fitness;", population_total_fitness / population_size, ";Highest Fitness;", len(most_fit),";",
-              most_fit[0].getFitness(),";", most_fit[0].getGenotype())
+        l.info(f"{count} ;Pop Size; {population_size} ;Pop Fitness; {population_total_fitness} ;Avg fitness; {population_total_fitness / population_size} ;Highest Fitness; {len(most_fit)}; {most_fit[0].getFitness()}; {most_fit[0].getGenotype()}")

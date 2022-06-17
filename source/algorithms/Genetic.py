@@ -18,6 +18,7 @@ class Genetic:
 		self.last_number_announced_trips_genetic_assigned = 0
 		self.config = config
 		self.tracker = tracker
+		self.count_uses = 0
 
 	def assign_using_ga(self, sim):
 		ga_object = ga(
@@ -33,10 +34,13 @@ class Genetic:
 			maxIterations=self.config["genetic_max_iterations"],
 			pOfCrossing=self.config["p_of_crossover"],
 			pOfMutating=self.config["p_of_mutate"],
-			sim=sim
+			sim=sim,
+			image_filename=self.config["image_filename"],
+			count_uses = self.count_uses
 		)
 		ga_solution = ga_object.run()[0].getGenotype()
 		self.tracker.genetic_most_fit_genotype.append(ga_solution)
+		self.count_uses += 1
 		return assign_genotype_to_triplist(sim, ga_solution)
 
 	def should_assign_using_genetic(self, sim):

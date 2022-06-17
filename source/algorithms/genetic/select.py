@@ -26,7 +26,7 @@ class select(ga_component):
         fitness_sum = 0
         for individual in population.getPopulation():
             fitness_sum = fitness_sum  + individual.getFitness()
-            if(fitness_sum>roulette_result):
+            if(fitness_sum>=roulette_result):
                 selected_individual = individual
                 break
 

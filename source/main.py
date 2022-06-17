@@ -66,12 +66,12 @@ class Main:
 if __name__ == "__main__":
 	Main(
 		algorithm_class="Genetic",
-		trip_requests_filename="exp/simulation-variant4-routes60-minutes600-density0.8.csv",
+		trip_requests_filename="exp/sample",
 		general_config_filename="default",
 		car_charge_config_filename="default",
 		check_results_filename="nothing",
-		log_filename="debug_routegen",
-		output_results_filename="debug_routegen",
+		log_filename="new_features_genetic",
+		output_results_filename="new_features_genetic",
 		station_metrics_filename="google_average_pessimistic",
 		assign_cars_only_after_all_trips_announced=True,
 		algo_config={
@@ -87,5 +87,6 @@ if __name__ == "__main__":
 			"p_of_mutate": 0.2,
 			"genetic_population_size": 100,
 			"genetic_max_iterations": 50,
+			"image_filename": "itworks"
 		},
 	)

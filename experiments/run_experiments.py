@@ -12,6 +12,7 @@ def start_experiments(experiments=None):
 		for run_no in range(experiment["number_of_runs"]):
 			print(f"Now running {run_no} of {experiment['experiment_name']}")
 			config = experiment["config"]
+			config["algo_config"]["image_filename"] = f"{experiment['experiment_name']}_{run_no}"
 			Main(
 				algorithm_class=config["algorithm_class"],
 				trip_requests_filename=config["trip_requests_filename"],

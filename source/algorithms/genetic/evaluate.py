@@ -18,13 +18,13 @@ class evaluate(ga_component):
         if self.METHOD_NUMBER == 4: fitness = self.eval_legal_sum_duration_of_assigned_trips(individual)
         if self.METHOD_NUMBER == 5: fitness = self.eval_legal_balance_of_network(individual)
 
-
+        fitness = fitness / len(individual)
         if self.PRINT: print("EVAL", "Individual Evaluated: ", individual, "Fitness: ", fitness)
         return fitness
 
     # 1
     def eval_simple_sum_number_of_assigned_trips(self, individual):
-        return sum(i > -1 for i in individual)
+        return sum(i > -1 for i in individual)-1
 
     # 2
     def eval_legal_sum_number_of_assigned_trips(self, individual):

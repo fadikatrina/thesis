@@ -1,20 +1,25 @@
 import matplotlib.pyplot as plt
+from pathlib import Path
+
 
 class visualise:
 
-    average_fitnesses = []
-    count = []
-
     def __init__(self):
-        pass
+        self.highest_fitness = []
+        self.counts = []
 
-    def visualise(self, average_fitness, count):
-        self.average_fitnesses.append(average_fitness)
-        self.count.append(count)
+    def add_iteration(self, new_highest_fitness, new_count):
+        self.highest_fitness.append(new_highest_fitness)
+        self.counts.append(new_count)
 
-    def show(self):
+    def show(self, filename, label):
+        Path("./output/genetic_fitness").mkdir(parents=True, exist_ok=True)
         plt.figure(200)
-        plt.plot(self.count, self.average_fitnesses)
+        plt.plot(self.counts, self.highest_fitness, label=str(label))
+        print(label)
+        print(self.counts)
+        print(self.highest_fitness)
         plt.xlabel('x - number of generations')
-        plt.ylabel('y - average fitness')
-        plt.savefig('stats.png')
+        plt.ylabel('y - highest fitness')
+        plt.legend()
+        plt.savefig(f'./output/genetic_fitness/{filename}.png')
