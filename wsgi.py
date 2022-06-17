@@ -21,7 +21,7 @@ def hello():
         shutil.make_archive('../experiments', 'zip', '../output')
         return send_file('experiments.zip')
     elif request.method == "DELETE":
-        shutil.rmtree('../output')
+        shutil.rmtree('./output')
         return "deleted"
     else:
         return "hi"
@@ -29,7 +29,7 @@ def hello():
 
 @application.route("/newexp", methods=['PUT'])
 def change():
-    with open(f'../experiments/experiments.json', 'w') as fp:
+    with open(f'./experiments/experiments.json', 'w') as fp:
         json.dump(request.json, fp)
     return "Changed"
 
@@ -38,14 +38,14 @@ def change():
 def addtripreq(filename):
     cwd = os.getcwd()
     print(cwd)
-    with open(f'../input/trips_requests/exp/{filename}.json', 'w') as fp:
+    with open(f'./input/trips_requests/exp/{filename}.json', 'w') as fp:
         json.dump(request.json, fp)
     return "Added"
 
 
 @application.route("/getfiles", methods=['GET'])
 def getfiles():
-    shutil.make_archive('../experiments', 'zip', '../output')
+    shutil.make_archive('./experiments', 'zip', '../output')
     return send_file('experiments.zip')
 
 
