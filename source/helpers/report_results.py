@@ -4,8 +4,8 @@ import json
 
 
 def write_txt(sim: Simulation, filename, config_vars, tracker):
-	Path("../output/results").mkdir(parents=True, exist_ok=True)
-	with open(f'../output/results/{filename}.txt', 'w') as f:
+	Path("./output/results").mkdir(parents=True, exist_ok=True)
+	with open(f'./output/results/{filename}.txt', 'w') as f:
 
 		f.write(f"SIMULATION END TIME {sim.simulation_clock}")
 		f.write('\n')

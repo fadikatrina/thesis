@@ -6,19 +6,16 @@ import json
 
 application = Flask(__name__,  static_url_path='')
 
-cwd = os.getcwd()
-print(f"in wsgi {cwd}")
-
 
 @application.route("/", methods=['GET', 'POST', 'DELETE', 'PATCH'])
 def hello():
     if request.method == 'POST':
         start_experiments(request.json)
-        shutil.make_archive('../experiments', 'zip', '../output')
+        shutil.make_archive('./experiments', 'zip', './output')
         return send_file('experiments.zip')
     elif request.method == 'PATCH':
         start_experiments()
-        shutil.make_archive('../experiments', 'zip', '../output')
+        shutil.make_archive('./experiments', 'zip', './output')
         return send_file('experiments.zip')
     elif request.method == "DELETE":
         shutil.rmtree('./output')
@@ -36,8 +33,6 @@ def change():
 
 @application.route("/addtriprequestfile/<filename>", methods=['PUT'])
 def addtripreq(filename):
-    cwd = os.getcwd()
-    print(cwd)
     with open(f'./input/trips_requests/exp/{filename}.json', 'w') as fp:
         json.dump(request.json, fp)
     return "Added"
@@ -45,7 +40,7 @@ def addtripreq(filename):
 
 @application.route("/getfiles", methods=['GET'])
 def getfiles():
-    shutil.make_archive('./experiments', 'zip', '../output')
+    shutil.make_archive('./experiments', 'zip', './output')
     return send_file('experiments.zip')
 
 

@@ -10,12 +10,12 @@ def load_station_metrics(filename):
 	default_behaviour_filenames = ["bristol_metrics_ogpaper", "google_average_best_guess", "google_average_pessimistic"]
 	if filename in default_behaviour_filenames:
 		MODE = 1
-		f = open(f'../input/locations/{filename}.json')
+		f = open(f'./input/locations/{filename}.json')
 		station_datas = json.load(f)
 	else:
 		station_datas = []
 		for i in range(15):
-			f = open(f'../input/locations/bristol_google_time_specific/{i}_{filename}.json')
+			f = open(f'./input/locations/bristol_google_time_specific/{i}_{filename}.json')
 			station_datas.append(json.load(f))
 
 

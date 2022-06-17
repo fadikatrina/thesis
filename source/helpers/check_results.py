@@ -4,7 +4,7 @@ import json
 
 
 def check_result(sim: Simulation, filename):
-	with open(f'../input/result_check/{filename}.json', 'r') as f:
+	with open(f'./input/result_check/{filename}.json', 'r') as f:
 		rules = json.load(f)
 		for rule in rules:
 			rule_name = rule["rule_name"]

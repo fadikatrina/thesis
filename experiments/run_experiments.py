@@ -1,17 +1,11 @@
 from source.main import Main
 import json
-import os
 
 
 def start_experiments(experiments=None):
 
-	cwd = os.getcwd()
-	print(f"in exp {cwd}")
-	if cwd[-6:] != "source":
-		os.chdir("./source")
-
 	if experiments is None:
-		f = open(f'../experiments/experiments.json')
+		f = open(f'./experiments/experiments.json')
 		experiments = json.load(f)
 
 	for experiment in experiments:
