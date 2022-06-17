@@ -6,7 +6,8 @@ import json
 
 application = Flask(__name__,  static_url_path='')
 
-os.chdir("./source")
+cwd = os.getcwd()
+print(f"in wsgi {cwd}")
 
 
 @application.route("/", methods=['GET', 'POST', 'DELETE', 'PATCH'])
