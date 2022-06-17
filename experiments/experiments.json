@@ -5,13 +5,7 @@
     "config": {
       "algorithm_class": "Genetic",
       "trip_requests_filename": "exp/sample",
-      "general_config_filename": "default",
-      "car_charge_config_filename": "default",
-      "check_results_filename": "nothing",
-      "log_filename": "debug_routegen",
-      "output_results_filename": "debug_routegen",
       "station_metrics_filename": "google_average_pessimistic",
-      "assign_cars_only_after_all_trips_announced": true,
       "algo_config": {
         "pick_strategy": 2,
         "genetic_eval_strategy": 1,
