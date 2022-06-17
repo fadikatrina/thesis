@@ -12,13 +12,11 @@ class visualise:
         self.highest_fitness.append(new_highest_fitness)
         self.counts.append(new_count)
 
-    def show(self, filename, label):
+    def show(self, filename, label, title):
         Path("./output/genetic_fitness").mkdir(parents=True, exist_ok=True)
         plt.figure(200)
         plt.plot(self.counts, self.highest_fitness, label=str(label))
-        print(label)
-        print(self.counts)
-        print(self.highest_fitness)
+        plt.title(title)
         plt.xlabel('x - number of generations')
         plt.ylabel('y - highest fitness')
         plt.legend()

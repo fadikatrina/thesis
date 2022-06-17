@@ -62,6 +62,8 @@ class ga:
                  genesAsArray = False,
                  image_filename="stats",
                  count_uses = 0):
+        self.config_string = f"Cross {pOfCrossing} {crossoverChoice} Mutate {pOfMutating} {mutateChoice} Select {selectionChoice} Eval {evaluationChoice} " \
+                             f"PopSize {populationSize} MaxItr {maxIterations}"
         if not numberToSelect: numberToSelect = int(populationSize/2)
         self.TARGET_FITNESS = targetFitness
         self.MAX_ITERATIONS = maxIterations
@@ -104,7 +106,7 @@ class ga:
             if self.PRINT_SUMMARY: self.printSummary(count, most_fit)
             if self.VISUALISE: self.visual.add_iteration(most_fit[0].getFitness(), count)
 
-        if self.VISUALISE: self.visual.show(self.image_filename, self.count_uses)
+        if self.VISUALISE: self.visual.show(self.image_filename, self.count_uses, self.config_string)
 
         return most_fit
 
