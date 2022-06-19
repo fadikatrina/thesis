@@ -61,6 +61,7 @@ class Main:
 				self.sim.set_new_triplist(new_triplist)
 				self.sim.new_trips_announced = False
 			self.sim.advance_simulation()
+		sim_logger.critical("======= SIM COMPLETE WRITING RESULTS NOW =======")
 		write_txt(self.sim, self.output_results_filename, self.config_vars, self.tracker)
 		check_result(self.sim, self.check_results_filename)
 
