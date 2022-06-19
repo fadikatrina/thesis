@@ -68,8 +68,8 @@ class Main:
 
 if __name__ == "__main__":
 	Main(
-		algorithm_class="Genetic",
-		trip_requests_filename="exp/sample",
+		algorithm_class="FirstAvailable",
+		trip_requests_filename="exp/variant0_routes1000",
 		general_config_filename="default",
 		car_charge_config_filename="default",
 		check_results_filename="nothing",

@@ -21,6 +21,8 @@ def restructure_txt_from_route_generation_tool():
 			line = line.rstrip('\n').split(',')
 			start_time = line[2].split(":")
 			start_time = (int(start_time[0])*3600) + (int(start_time[1])*60)
+			if start_time == 0:
+				continue
 			start_id = int(line[0])
 			end_id = int(line[1])
 			if start_id == end_id:
