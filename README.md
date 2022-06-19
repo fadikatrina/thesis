@@ -25,28 +25,28 @@
 ## Algorithms Configuration Settings
 ### ShortMode
 		algo_config={
-			"pick_strategy": 2,                             // How to choose a car (from those that do not have any trips and have enough charge)    
-			                                                // 0            random
-			                                                // 1            most charge
-			                                                // 2            least charge
-			                                                // 3            balance the charges in the stations
+             "pick_strategy": 2,                                // How to choose a car (from those that do not have any trips and have enough charge)    
+                                                                // 0            random
+                                                                // 1            most charge
+                                                                // 2            least charge
+                                                                // 3            balance the charges in the stations
+		    "dont_take_into_account_future_cars_and_charge" :   // True Or False
 		}
 ### LongMode
 		algo_config={
-			"pick_strategy": 2,                              // same as ShortMode
+			"pick_strategy": 2,                                 // same as ShortMode
+		    "dont_take_into_account_future_cars_and_charge" :   // same as ShortMode
 		}
 ### Genetic
 		algo_config={
-			"pick_strategy": 2,                             // same as ShortMode
-			
-			"genetic_eval_strategy": 1,                     // 1    count number of trips assigned
-			                                                // 2    count only legal number of trips assigned
-			                                                // 3    total duration of trips assigned
-			                                                // 4    total duration of legal trips assigned
-			                                                // 5    try to maintain the balance of the network
-			                                                 
-			                                                 
-			                                                 of legal trips assigned
+			"pick_strategy": 2,                                 // same as ShortMode
+	        "dont_take_into_account_future_cars_and_charge" :   // same as ShortMode
+			"genetic_eval_strategy": 1,                         // 1    count number of trips assigned
+			                                                    // 2    count only legal number of trips assigned
+			                                                    // 3    total duration of trips assigned
+			                                                    // 4    total duration of legal trips assigned
+			                                                    // 5    try to maintain the balance of the network 
+			                                                            of legal trips assigned
 			                                                
 			"genetic_should_assign_strategy": 1,            // 1    time based strategy for checking if should use genetic again (uses genetic_assign_every_x_seconds)
 			                                                // 2    number of trips strategy for checking if should use genetic again (uses genetic_assign_every_x_trips)

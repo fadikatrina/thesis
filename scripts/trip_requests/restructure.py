@@ -10,6 +10,9 @@ def restructure_txt_from_route_generation_tool():
 
 	for filename in filenames:
 
+		if filename == ".DS_Store":
+			continue
+
 		res = {"trips" : []}
 		with open(f'./{FOLDER_NAME}/{filename}') as f:
 			lines = f.readlines()
@@ -28,6 +31,9 @@ def restructure_txt_from_route_generation_tool():
 				"start_station_id": start_id,
 				"end_station_id": end_id
 			})
+
+		filename = filename.split("-")[1:3]
+		filename = '_'.join(filename)
 
 		with open(f'../../input/trips_requests/exp/{filename}.json', 'w') as fp:
 			json.dump(res, fp)

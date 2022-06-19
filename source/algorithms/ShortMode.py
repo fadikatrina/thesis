@@ -10,8 +10,10 @@ class ShortMode:
 
 	def __init__(self, config, tracker):
 		self.CAR_PICKING_MODE = config["pick_strategy"]
+		self.STUPID_VERSION = config["dont_take_into_account_future_cars_and_charge"]
 		self.l = algo_short_mode
 		self.tracker = tracker
+		self.trips_already_attempted = []
 
 	def set_logger(self, new_logger):
 		self.l = new_logger
@@ -72,7 +74,8 @@ class ShortMode:
 	def assign_cars(self, sim: Simulation, avoid_car_id=None):
 		count_assigned = 0
 		for trip in sim.announced_trip_list:
-			if not trip.has_a_car():
+			if not trip.has_a_car() and trip.id_ not in self.trips_already_attempted:
+				self.trips_already_attempted.append(trip.id_)
 				sim2 = copy.deepcopy(sim)
 				sim2.LOG = False
 				sim2.set_logger(sim_copy_logger)
@@ -81,10 +84,20 @@ class ShortMode:
 				sim3 = copy.deepcopy(sim2)
 				sim3.advance_simulation_to_time(trip.end_time)
 				dest_station = sim3.stations[trip.end_station_id]
-				if dest_station.is_full():
+				no_cars_places_at_end_station = dest_station.max_capacity - (len(dest_station.cars) + len([x.end_station_id == trip.end_station_id for x in sim3.in_progress_trip_list]))
+				self.l.debug(f"END STATION ({dest_station}) EXPECTED OPEN SPOTS ({no_cars_places_at_end_station}) TRIP ({trip})")
+				if no_cars_places_at_end_station <= 0:
 					self.l.info(f"END STATION ({dest_station}) WILL BE FULL SO CANT SCHEDULE TRIP ({trip})")
 					continue
 				available_cars = station.cars
+				if self.STUPID_VERSION:
+					available_cars_at_start = copy.deepcopy(sim.stations[trip.start_station_id].cars)
+					available_cars_at_start_filtered = []
+					available_cars = [x.id_ for x in available_cars]
+					for car in available_cars_at_start:
+						if car.id_ in available_cars:
+							available_cars_at_start_filtered.append(car)
+					available_cars = available_cars_at_start_filtered
 				available_cars = self.remove_cars_not_enough_charge(available_cars, trip.charge_cost)
 				available_cars = self.remove_cars_with_future_trip(available_cars, sim.announced_trip_list, trip.start_time)
 				if avoid_car_id:
@@ -97,4 +110,3 @@ class ShortMode:
 				count_assigned += 1
 		self.tracker.no_assignments_short.append(count_assigned)
 		return sim.announced_trip_list
-

@@ -17,11 +17,36 @@ def write_txt(sim: Simulation, filename, config_vars, tracker):
 		f.write('\n')
 		f.write(f"PERCENTAGE TRIPS REJECTED {len(sim.rejected_trip_list) / sim.TOTAL_TRIPS_NO}")
 		f.write('\n')
+		f.write(f"NUMBER TRIPS COMPLETED {len(sim.completed_trip_list)}")
+		f.write('\n')
+		f.write(f"NUMBER TRIPS REJECTED {len(sim.rejected_trip_list)}")
+		f.write('\n')
+		f.write(f"DURATION TRIPS COMPLETED {sum(x.duration for x in sim.completed_trip_list)}")
+		f.write('\n')
+		f.write(f"DURATION TRIPS REJECTED {sum(x.duration for x in sim.rejected_trip_list)}")
+		f.write('\n')
 		f.write(str(tracker))
+		f.write('\n')
+		f.write(f"SHORT {sum(tracker.no_assignments_short)}")
+		f.write('\n')
+		f.write(f"LONG {sum(tracker.no_assignments_long)}")
+		f.write('\n')
+		f.write(f"GENETIC {sum(tracker.no_assignments_genetic)}")
+		f.write('\n')
 		f.write('\n')
 
 		f.write(f"CONFIG")
-		f.write(json.dumps(config_vars))
+		f.write('\n')
+		for key, value in config_vars.items():
+			if key == "config_algo":
+				f.write(key)
+				f.write('\n')
+				for key2, value2 in value.items():
+					f.write(f"{key2}: {value2}")
+					f.write('\n')
+			else:
+				f.write(f"{key}: {value}")
+				f.write('\n')
 
 		f.write('\n')
 		f.write('\n')

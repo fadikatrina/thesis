@@ -157,3 +157,4 @@ cython_debug/
 /scripts/trip_requests/input/
 
 /experiments.zip
+/experiments/experiments_draft.json

@@ -55,9 +55,11 @@ class Main:
 	def run(self):
 		while not self.sim.simulation_END:
 			sim_copy = copy.deepcopy(self.sim)
-			if not (self.assign_cars_only_after_all_trips_announced and len(self.sim.request_trip_list) > 0):
+			if not (self.assign_cars_only_after_all_trips_announced and len(self.sim.request_trip_list) > 0) and self.sim.new_trips_announced:
+				self.tracker.no_announced_trips.append(len(self.sim.announced_trip_list))
 				new_triplist = self.algo.assign_cars(sim_copy)
 				self.sim.set_new_triplist(new_triplist)
+				self.sim.new_trips_announced = False
 			self.sim.advance_simulation()
 		write_txt(self.sim, self.output_results_filename, self.config_vars, self.tracker)
 		check_result(self.sim, self.check_results_filename)
@@ -76,6 +78,7 @@ if __name__ == "__main__":
 		assign_cars_only_after_all_trips_announced=True,
 		algo_config={
 			"pick_strategy": 2,
+			"dont_take_into_account_future_cars_and_charge": False,
 			"genetic_eval_strategy": 1,
 			"genetic_should_assign_strategy": 1,
 			"genetic_assign_every_x_trips": 5,

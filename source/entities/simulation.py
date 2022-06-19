@@ -2,7 +2,7 @@ from source.input_access.mod_stations import get_mod_location_data
 from source.entities.station import Station
 from source.entities.triplists.triplist import TripList
 from source.entities.triplists.inprogresstriplist import InProgressTripList
-from source.helpers.car_finder import pop_from_list
+from source.helpers.car_finder import pop_from_list, CarIDError
 from source.input_access.configuration import get_config_value
 
 
@@ -30,7 +30,7 @@ class Simulation:
 		self.simulation_clock = 0  # seconds
 		self.TOTAL_TRIPS_NO = len(trip_requests)
 		self.TOTAL_CARS_NO = self.calculate_total_cars_no_in_stations()
-		self.announced_trip_list.append(self.request_trip_list.pop(0))
+		self.new_trips_announced = False
 
 	def set_logger(self, logger):
 		self.l = logger
@@ -61,6 +61,7 @@ class Simulation:
 				self.check_new_announcing_trip_no_car_conflict(new_request)
 				self.announced_trip_list.append(new_request)
 				self.set_new_clock_time(new_request.request_time)
+				self.new_trips_announced = True
 				if len(self.request_trip_list) == 0:
 					break
 		else:
@@ -106,7 +107,10 @@ class Simulation:
 				end_station = self.stations[trip.end_station_id]
 				self.cars_in_progress_trip, car = pop_from_list(self.cars_in_progress_trip, trip.car_id, trip=trip)
 				car.last_trip_end_time = trip.end_time
-				end_station.add_car(car)
+				try:
+					end_station.add_car(car)
+				except RuntimeError as e:
+					raise CarIDError(f"END STATION TOO FULL {e}", trip)
 				self.in_progress_trip_list.remove(trip)
 				last_trip_time = trip.end_time
 			else:
@@ -204,10 +208,7 @@ class Simulation:
 		if len(self.announced_trip_list.get_trips_using_car(car_id)) != 0:
 			raise RuntimeWarning(f"New request ({new_request}) CAR_ID ({car_id}) already assigned to a trip")
 		# car is at the start station
-		try:
-			pop_from_list(self.stations[new_request.start_station_id].cars, car_id, True)
-		except RuntimeError:
-			raise RuntimeWarning(f"New request ({new_request}) CAR_ID ({car_id}) is not at the start station")
+		pop_from_list(self.stations[new_request.start_station_id].cars, car_id, True)
 
 	# helper functions
 	def calculate_total_cars_no_in_stations(self):
