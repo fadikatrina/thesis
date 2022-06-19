@@ -8,10 +8,14 @@ def generate():
 		for crossover_method in range(1, 3):
 			for mutate_method in range(1, 3):
 				for crossover_p in range(11):
+					if crossover_p > 1:
+						crossover_p = crossover_p / 10
 					for mutate_p in range(11):
+						if mutate_p > 1:
+							mutate_p = mutate_p / 10
 						for number_of_requests in [60, 120, 500, 1000]:
-							crossover_p = crossover_p/10
-							mutate_p = mutate_p/10
+							print(crossover_p)
+							print(mutate_p)
 							experiments.append({
 									"experiment_name": f"gen_hyper_{number_of_requests}_{mutate_p}_{crossover_p}_{mutate_method}_{crossover_method}_{eval_method}",
 									"number_of_runs": 2,
