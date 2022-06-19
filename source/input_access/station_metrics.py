@@ -32,12 +32,11 @@ def get_stations_metrics(start_station_id, end_station_id, start_time):
 		correction = 0
 		if start_station_id < end_station_id:
 			correction = -1
-		index = 0
 		try:
 			index = max(k for k in station_data if int(k) <= start_time)
 		except ValueError:
-			pass
-		station_data = station_data[list(station_data.keys())[index]][end_station_id+correction]
+			index = list(station_data.keys())[0]
+		station_data = station_data[index][end_station_id+correction]
 		return station_data["duration_in_traffic"]["value"], station_data["distance"]["value"], station_data["charge_cost"]
 
 
