@@ -23,7 +23,7 @@ def add_request_time():
 			trip["request_time"] = max(trip["start_time"] - random.randint(1, ANNOUNCE_UP_TO_SECONDS_BEFORE), 0)
 
 		with open(f'{PATH}/dynamic_request_time/{filename}', 'w') as fp:
-			json.dump(trips, fp)
+			json.dump({"trips": trips}, fp)
 
 
 if __name__ == "__main__":

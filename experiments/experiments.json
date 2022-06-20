@@ -1,3 +1,1022 @@
 [
-
+    {
+    "experiment_name": "dynamic_req_time_recreate_og_short_500",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "ShortMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes500",
+        "station_metrics_filename": "bristol_metrics_ogpaper",
+        "general_config_filename" : "og_paper_no_max_capacity",
+        "algo_config": {
+          "pick_strategy": 1,
+          "dont_take_into_account_future_cars_and_charge": true
+        }
+    }
+  },
+  {
+    "experiment_name": "dynamic_req_time_recreate_og_short_1000",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "ShortMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes1000",
+        "station_metrics_filename": "bristol_metrics_ogpaper",
+        "general_config_filename" : "og_paper_no_max_capacity",
+        "algo_config": {
+          "pick_strategy": 1,
+          "dont_take_into_account_future_cars_and_charge": true
+        }
+    }
+  },
+    {
+    "experiment_name": "dynamic_req_time_recreate_og_long_500",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "LongMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes500",
+        "station_metrics_filename": "bristol_metrics_ogpaper",
+        "general_config_filename" : "og_paper_no_max_capacity",
+        "algo_config": {
+          "pick_strategy": 1,
+          "dont_take_into_account_future_cars_and_charge": true
+        }
+    }
+  },
+  {
+    "experiment_name": "dynamic_req_time_recreate_og_long_1000",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "LongMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes1000",
+        "station_metrics_filename": "bristol_metrics_ogpaper",
+        "general_config_filename" : "og_paper_no_max_capacity",
+        "algo_config": {
+          "pick_strategy": 1,
+          "dont_take_into_account_future_cars_and_charge": true
+        }
+    }
+  },
+  {
+    "experiment_name": "dynamic_req_time_recreate_og_short_60",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "ShortMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes60",
+        "station_metrics_filename": "bristol_metrics_ogpaper",
+        "general_config_filename" : "og_paper_no_max_capacity",
+        "algo_config": {
+          "pick_strategy": 1,
+          "dont_take_into_account_future_cars_and_charge": true
+        }
+    }
+  },
+  {
+    "experiment_name": "dynamic_req_time_recreate_og_short_120",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "ShortMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes120",
+        "station_metrics_filename": "bristol_metrics_ogpaper",
+        "general_config_filename" : "og_paper_no_max_capacity",
+        "algo_config": {
+          "pick_strategy": 1,
+          "dont_take_into_account_future_cars_and_charge": true
+        }
+    }
+  },
+    {
+    "experiment_name": "dynamic_req_time_recreate_og_long_60",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "LongMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes60",
+        "station_metrics_filename": "bristol_metrics_ogpaper",
+        "general_config_filename" : "og_paper_no_max_capacity",
+        "algo_config": {
+          "pick_strategy": 1,
+          "dont_take_into_account_future_cars_and_charge": true
+        }
+    }
+  },
+  {
+    "experiment_name": "dynamic_req_time_recreate_og_long_120",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "LongMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes120",
+        "station_metrics_filename": "bristol_metrics_ogpaper",
+        "general_config_filename" : "og_paper_no_max_capacity",
+        "algo_config": {
+          "pick_strategy": 1,
+          "dont_take_into_account_future_cars_and_charge": true
+        }
+    }
+  },
+    {
+    "experiment_name": "dynamic_req_time_with_short_enhancement_short_60",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "ShortMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes60",
+        "station_metrics_filename": "bristol_metrics_ogpaper",
+        "general_config_filename" : "og_paper_no_max_capacity",
+        "algo_config": {
+          "pick_strategy": 1,
+          "dont_take_into_account_future_cars_and_charge": false
+        }
+    }
+  },
+  {
+    "experiment_name": "dynamic_req_time_with_short_enhancement_short_120",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "ShortMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes120",
+        "station_metrics_filename": "bristol_metrics_ogpaper",
+        "general_config_filename" : "og_paper_no_max_capacity",
+        "algo_config": {
+          "pick_strategy": 1,
+          "dont_take_into_account_future_cars_and_charge": false
+        }
+    }
+  },
+    {
+    "experiment_name": "dynamic_req_time_with_short_enhancement_long_60",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "LongMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes60",
+        "station_metrics_filename": "bristol_metrics_ogpaper",
+        "general_config_filename" : "og_paper_no_max_capacity",
+        "algo_config": {
+          "pick_strategy": 1,
+          "dont_take_into_account_future_cars_and_charge": false
+        }
+    }
+  },
+  {
+    "experiment_name": "dynamic_req_time_with_short_enhancement_long_120",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "LongMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes120",
+        "station_metrics_filename": "bristol_metrics_ogpaper",
+        "general_config_filename" : "og_paper_no_max_capacity",
+        "algo_config": {
+          "pick_strategy": 1,
+          "dont_take_into_account_future_cars_and_charge": false
+        }
+    }
+  },
+    {
+    "experiment_name": "dynamic_req_time_with_station_limit_short_60",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "ShortMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes60",
+        "station_metrics_filename": "bristol_metrics_ogpaper",
+        "general_config_filename" : "og_paper_with_max_capacity",
+        "algo_config": {
+          "pick_strategy": 1,
+          "dont_take_into_account_future_cars_and_charge": true
+        }
+    }
+  },
+  {
+    "experiment_name": "dynamic_req_time_with_station_limit_short_120",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "ShortMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes120",
+        "station_metrics_filename": "bristol_metrics_ogpaper",
+        "general_config_filename" : "og_paper_with_max_capacity",
+        "algo_config": {
+          "pick_strategy": 1,
+          "dont_take_into_account_future_cars_and_charge": true
+        }
+    }
+  },
+    {
+    "experiment_name": "dynamic_req_time_with_station_limit_long_60",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "LongMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes60",
+        "station_metrics_filename": "bristol_metrics_ogpaper",
+        "general_config_filename" : "og_paper_with_max_capacity",
+        "algo_config": {
+          "pick_strategy": 1,
+          "dont_take_into_account_future_cars_and_charge": true
+        }
+    }
+  },
+  {
+    "experiment_name": "dynamic_req_time_with_station_limit_long_120",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "LongMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes120",
+        "station_metrics_filename": "bristol_metrics_ogpaper",
+        "general_config_filename" : "og_paper_with_max_capacity",
+        "algo_config": {
+          "pick_strategy": 1,
+          "dont_take_into_account_future_cars_and_charge": true
+        }
+    }
+  },
+      {
+    "experiment_name": "dynamic_req_time_with_station_limit_and_enhancements_short_60",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "ShortMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes60",
+        "station_metrics_filename": "bristol_metrics_ogpaper",
+        "general_config_filename" : "og_paper_with_max_capacity",
+        "algo_config": {
+          "pick_strategy": 1,
+          "dont_take_into_account_future_cars_and_charge": false
+        }
+    }
+  },
+  {
+    "experiment_name": "dynamic_req_time_with_station_limit_and_enhancements_short_120",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "ShortMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes120",
+        "station_metrics_filename": "bristol_metrics_ogpaper",
+        "general_config_filename" : "og_paper_with_max_capacity",
+        "algo_config": {
+          "pick_strategy": 1,
+          "dont_take_into_account_future_cars_and_charge": false
+        }
+    }
+  },
+    {
+    "experiment_name": "dynamic_req_time_with_station_limit_and_enhancements_long_60",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "LongMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes60",
+        "station_metrics_filename": "bristol_metrics_ogpaper",
+        "general_config_filename" : "og_paper_with_max_capacity",
+        "algo_config": {
+          "pick_strategy": 1,
+          "dont_take_into_account_future_cars_and_charge": false
+        }
+    }
+  },
+  {
+    "experiment_name": "dynamic_req_time_with_station_limit_and_enhancements_long_120",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "LongMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes120",
+        "station_metrics_filename": "bristol_metrics_ogpaper",
+        "general_config_filename" : "og_paper_with_max_capacity",
+        "algo_config": {
+          "pick_strategy": 1,
+          "dont_take_into_account_future_cars_and_charge": false
+        }
+    }
+  },
+    {
+    "experiment_name": "dynamic_req_time_recreate_og_short_60",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "ShortMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes60",
+        "station_metrics_filename": "bristol_metrics_ogpaper",
+        "general_config_filename" : "og_paper_no_max_capacity",
+        "algo_config": {
+          "pick_strategy": 1,
+          "dont_take_into_account_future_cars_and_charge": true
+        }
+    }
+  },
+  {
+    "experiment_name": "dynamic_req_time_recreate_og_short_120",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "ShortMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes120",
+        "station_metrics_filename": "bristol_metrics_ogpaper",
+        "general_config_filename" : "og_paper_no_max_capacity",
+        "algo_config": {
+          "pick_strategy": 1,
+          "dont_take_into_account_future_cars_and_charge": true
+        }
+    }
+  },
+    {
+    "experiment_name": "dynamic_req_time_recreate_og_long_500",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "LongMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes500",
+        "station_metrics_filename": "bristol_metrics_ogpaper",
+        "general_config_filename" : "og_paper_no_max_capacity",
+        "algo_config": {
+          "pick_strategy": 1,
+          "dont_take_into_account_future_cars_and_charge": true
+        }
+    }
+  },
+  {
+    "experiment_name": "dynamic_req_time_recreate_og_long_1000",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "LongMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes1000",
+        "station_metrics_filename": "bristol_metrics_ogpaper",
+        "general_config_filename" : "og_paper_no_max_capacity",
+        "algo_config": {
+          "pick_strategy": 1,
+          "dont_take_into_account_future_cars_and_charge": true
+        }
+    }
+  },
+    {
+    "experiment_name": "dynamic_req_time_with_short_enhancement_short_500",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "ShortMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes500",
+        "station_metrics_filename": "bristol_metrics_ogpaper",
+        "general_config_filename" : "og_paper_no_max_capacity",
+        "algo_config": {
+          "pick_strategy": 1,
+          "dont_take_into_account_future_cars_and_charge": false
+        }
+    }
+  },
+  {
+    "experiment_name": "dynamic_req_time_with_short_enhancement_short_1000",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "ShortMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes1000",
+        "station_metrics_filename": "bristol_metrics_ogpaper",
+        "general_config_filename" : "og_paper_no_max_capacity",
+        "algo_config": {
+          "pick_strategy": 1,
+          "dont_take_into_account_future_cars_and_charge": false
+        }
+    }
+  },
+    {
+    "experiment_name": "dynamic_req_time_with_short_enhancement_long_500",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "LongMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes500",
+        "station_metrics_filename": "bristol_metrics_ogpaper",
+        "general_config_filename" : "og_paper_no_max_capacity",
+        "algo_config": {
+          "pick_strategy": 1,
+          "dont_take_into_account_future_cars_and_charge": false
+        }
+    }
+  },
+  {
+    "experiment_name": "dynamic_req_time_with_short_enhancement_long_1000",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "LongMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes1000",
+        "station_metrics_filename": "bristol_metrics_ogpaper",
+        "general_config_filename" : "og_paper_no_max_capacity",
+        "algo_config": {
+          "pick_strategy": 1,
+          "dont_take_into_account_future_cars_and_charge": false
+        }
+    }
+  },
+    {
+    "experiment_name": "dynamic_req_time_with_station_limit_short_500",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "ShortMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes500",
+        "station_metrics_filename": "bristol_metrics_ogpaper",
+        "general_config_filename" : "og_paper_with_max_capacity",
+        "algo_config": {
+          "pick_strategy": 1,
+          "dont_take_into_account_future_cars_and_charge": true
+        }
+    }
+  },
+  {
+    "experiment_name": "dynamic_req_time_with_station_limit_short_1000",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "ShortMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes1000",
+        "station_metrics_filename": "bristol_metrics_ogpaper",
+        "general_config_filename" : "og_paper_with_max_capacity",
+        "algo_config": {
+          "pick_strategy": 1,
+          "dont_take_into_account_future_cars_and_charge": true
+        }
+    }
+  },
+    {
+    "experiment_name": "dynamic_req_time_with_station_limit_long_500",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "LongMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes500",
+        "station_metrics_filename": "bristol_metrics_ogpaper",
+        "general_config_filename" : "og_paper_with_max_capacity",
+        "algo_config": {
+          "pick_strategy": 1,
+          "dont_take_into_account_future_cars_and_charge": true
+        }
+    }
+  },
+  {
+    "experiment_name": "dynamic_req_time_with_station_limit_long_1000",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "LongMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes1000",
+        "station_metrics_filename": "bristol_metrics_ogpaper",
+        "general_config_filename" : "og_paper_with_max_capacity",
+        "algo_config": {
+          "pick_strategy": 1,
+          "dont_take_into_account_future_cars_and_charge": true
+        }
+    }
+  },
+      {
+    "experiment_name": "dynamic_req_time_with_station_limit_and_enhancements_short_500",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "ShortMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes500",
+        "station_metrics_filename": "bristol_metrics_ogpaper",
+        "general_config_filename" : "og_paper_with_max_capacity",
+        "algo_config": {
+          "pick_strategy": 1,
+          "dont_take_into_account_future_cars_and_charge": false
+        }
+    }
+  },
+  {
+    "experiment_name": "dynamic_req_time_with_station_limit_and_enhancements_short_1000",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "ShortMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes1000",
+        "station_metrics_filename": "bristol_metrics_ogpaper",
+        "general_config_filename" : "og_paper_with_max_capacity",
+        "algo_config": {
+          "pick_strategy": 1,
+          "dont_take_into_account_future_cars_and_charge": false
+        }
+    }
+  },
+    {
+    "experiment_name": "dynamic_req_time_with_station_limit_and_enhancements_long_500",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "LongMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes500",
+        "station_metrics_filename": "bristol_metrics_ogpaper",
+        "general_config_filename" : "og_paper_with_max_capacity",
+        "algo_config": {
+          "pick_strategy": 1,
+          "dont_take_into_account_future_cars_and_charge": false
+        }
+    }
+  },
+  {
+    "experiment_name": "dynamic_req_time_with_station_limit_and_enhancements_long_1000",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "LongMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes1000",
+        "station_metrics_filename": "bristol_metrics_ogpaper",
+        "general_config_filename" : "og_paper_with_max_capacity",
+        "algo_config": {
+          "pick_strategy": 1,
+          "dont_take_into_account_future_cars_and_charge": false
+        }
+    }
+  },
+  {
+    "experiment_name": "dynamic_req_time_best_pick_strategy_0_60_short",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "ShortMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes60",
+        "station_metrics_filename": "google_average_pessimistic",
+        "general_config_filename" : "default",
+        "algo_config": {
+          "pick_strategy": 0,
+          "dont_take_into_account_future_cars_and_charge": false
+        }
+    }
+  },
+  {
+    "experiment_name": "dynamic_req_time_best_pick_strategy_0_60_long",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "LongMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes60",
+        "station_metrics_filename": "google_average_pessimistic",
+        "general_config_filename" : "default",
+        "algo_config": {
+          "pick_strategy": 0,
+          "dont_take_into_account_future_cars_and_charge": false
+        }
+    }
+  },
+    {
+    "experiment_name": "dynamic_req_time_best_pick_strategy_1_60_short",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "ShortMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes60",
+        "station_metrics_filename": "google_average_pessimistic",
+        "general_config_filename" : "default",
+        "algo_config": {
+          "pick_strategy": 1,
+          "dont_take_into_account_future_cars_and_charge": false
+        }
+    }
+  },
+  {
+    "experiment_name": "dynamic_req_time_best_pick_strategy_1_60_long",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "LongMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes60",
+        "station_metrics_filename": "google_average_pessimistic",
+        "general_config_filename" : "default",
+        "algo_config": {
+          "pick_strategy": 1,
+          "dont_take_into_account_future_cars_and_charge": false
+        }
+    }
+  },
+    {
+    "experiment_name": "dynamic_req_time_best_pick_strategy_2_60_short",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "ShortMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes60",
+        "station_metrics_filename": "google_average_pessimistic",
+        "general_config_filename" : "default",
+        "algo_config": {
+          "pick_strategy": 2,
+          "dont_take_into_account_future_cars_and_charge": false
+        }
+    }
+  },
+  {
+    "experiment_name": "dynamic_req_time_best_pick_strategy_2_60_long",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "LongMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes60",
+        "station_metrics_filename": "google_average_pessimistic",
+        "general_config_filename" : "default",
+        "algo_config": {
+          "pick_strategy": 2,
+          "dont_take_into_account_future_cars_and_charge": false
+        }
+    }
+  },
+    {
+    "experiment_name": "dynamic_req_time_best_pick_strategy_3_60_short",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "ShortMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes60",
+        "station_metrics_filename": "google_average_pessimistic",
+        "general_config_filename" : "default",
+        "algo_config": {
+          "pick_strategy": 3,
+          "dont_take_into_account_future_cars_and_charge": false
+        }
+    }
+  },
+  {
+    "experiment_name": "dynamic_req_time_best_pick_strategy_3_60_long",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "LongMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes60",
+        "station_metrics_filename": "google_average_pessimistic",
+        "general_config_filename" : "default",
+        "algo_config": {
+          "pick_strategy": 3,
+          "dont_take_into_account_future_cars_and_charge": false
+        }
+    }
+  },
+   {
+    "experiment_name": "dynamic_req_time_best_pick_strategy_0_120_short",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "ShortMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes120",
+        "station_metrics_filename": "google_average_pessimistic",
+        "general_config_filename" : "default",
+        "algo_config": {
+          "pick_strategy": 0,
+          "dont_take_into_account_future_cars_and_charge": false
+        }
+    }
+  },
+  {
+    "experiment_name": "dynamic_req_time_best_pick_strategy_0_120_long",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "LongMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes120",
+        "station_metrics_filename": "google_average_pessimistic",
+        "general_config_filename" : "default",
+        "algo_config": {
+          "pick_strategy": 0,
+          "dont_take_into_account_future_cars_and_charge": false
+        }
+    }
+  },
+    {
+    "experiment_name": "dynamic_req_time_best_pick_strategy_1_120_short",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "ShortMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes120",
+        "station_metrics_filename": "google_average_pessimistic",
+        "general_config_filename" : "default",
+        "algo_config": {
+          "pick_strategy": 1,
+          "dont_take_into_account_future_cars_and_charge": false
+        }
+    }
+  },
+  {
+    "experiment_name": "dynamic_req_time_best_pick_strategy_1_120_long",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "LongMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes120",
+        "station_metrics_filename": "google_average_pessimistic",
+        "general_config_filename" : "default",
+        "algo_config": {
+          "pick_strategy": 1,
+          "dont_take_into_account_future_cars_and_charge": false
+        }
+    }
+  },
+    {
+    "experiment_name": "dynamic_req_time_best_pick_strategy_2_120_short",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "ShortMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes120",
+        "station_metrics_filename": "google_average_pessimistic",
+        "general_config_filename" : "default",
+        "algo_config": {
+          "pick_strategy": 2,
+          "dont_take_into_account_future_cars_and_charge": false
+        }
+    }
+  },
+  {
+    "experiment_name": "dynamic_req_time_best_pick_strategy_2_120_long",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "LongMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes120",
+        "station_metrics_filename": "google_average_pessimistic",
+        "general_config_filename" : "default",
+        "algo_config": {
+          "pick_strategy": 2,
+          "dont_take_into_account_future_cars_and_charge": false
+        }
+    }
+  },
+    {
+    "experiment_name": "dynamic_req_time_best_pick_strategy_3_120_short",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "ShortMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes120",
+        "station_metrics_filename": "google_average_pessimistic",
+        "general_config_filename" : "default",
+        "algo_config": {
+          "pick_strategy": 3,
+          "dont_take_into_account_future_cars_and_charge": false
+        }
+    }
+  },
+  {
+    "experiment_name": "dynamic_req_time_best_pick_strategy_3_120_long",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "LongMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes120",
+        "station_metrics_filename": "google_average_pessimistic",
+        "general_config_filename" : "default",
+        "algo_config": {
+          "pick_strategy": 3,
+          "dont_take_into_account_future_cars_and_charge": false
+        }
+    }
+  },
+   {
+    "experiment_name": "dynamic_req_time_best_pick_strategy_0_500_short",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "ShortMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes500",
+        "station_metrics_filename": "google_average_pessimistic",
+        "general_config_filename" : "default",
+        "algo_config": {
+          "pick_strategy": 0,
+          "dont_take_into_account_future_cars_and_charge": false
+        }
+    }
+  },
+  {
+    "experiment_name": "dynamic_req_time_best_pick_strategy_0_500_long",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "LongMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes500",
+        "station_metrics_filename": "google_average_pessimistic",
+        "general_config_filename" : "default",
+        "algo_config": {
+          "pick_strategy": 0,
+          "dont_take_into_account_future_cars_and_charge": false
+        }
+    }
+  },
+    {
+    "experiment_name": "dynamic_req_time_best_pick_strategy_1_500_short",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "ShortMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes500",
+        "station_metrics_filename": "google_average_pessimistic",
+        "general_config_filename" : "default",
+        "algo_config": {
+          "pick_strategy": 1,
+          "dont_take_into_account_future_cars_and_charge": false
+        }
+    }
+  },
+  {
+    "experiment_name": "dynamic_req_time_best_pick_strategy_1_500_long",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "LongMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes500",
+        "station_metrics_filename": "google_average_pessimistic",
+        "general_config_filename" : "default",
+        "algo_config": {
+          "pick_strategy": 1,
+          "dont_take_into_account_future_cars_and_charge": false
+        }
+    }
+  },
+    {
+    "experiment_name": "dynamic_req_time_best_pick_strategy_2_500_short",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "ShortMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes500",
+        "station_metrics_filename": "google_average_pessimistic",
+        "general_config_filename" : "default",
+        "algo_config": {
+          "pick_strategy": 2,
+          "dont_take_into_account_future_cars_and_charge": false
+        }
+    }
+  },
+  {
+    "experiment_name": "dynamic_req_time_best_pick_strategy_2_500_long",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "LongMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes500",
+        "station_metrics_filename": "google_average_pessimistic",
+        "general_config_filename" : "default",
+        "algo_config": {
+          "pick_strategy": 2,
+          "dont_take_into_account_future_cars_and_charge": false
+        }
+    }
+  },
+    {
+    "experiment_name": "dynamic_req_time_best_pick_strategy_3_500_short",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "ShortMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes500",
+        "station_metrics_filename": "google_average_pessimistic",
+        "general_config_filename" : "default",
+        "algo_config": {
+          "pick_strategy": 3,
+          "dont_take_into_account_future_cars_and_charge": false
+        }
+    }
+  },
+  {
+    "experiment_name": "dynamic_req_time_best_pick_strategy_3_500_long",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "LongMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes500",
+        "station_metrics_filename": "google_average_pessimistic",
+        "general_config_filename" : "default",
+        "algo_config": {
+          "pick_strategy": 3,
+          "dont_take_into_account_future_cars_and_charge": false
+        }
+    }
+  },
+   {
+    "experiment_name": "dynamic_req_time_best_pick_strategy_0_1000_short",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "ShortMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes1000",
+        "station_metrics_filename": "google_average_pessimistic",
+        "general_config_filename" : "default",
+        "algo_config": {
+          "pick_strategy": 0,
+          "dont_take_into_account_future_cars_and_charge": false
+        }
+    }
+  },
+  {
+    "experiment_name": "dynamic_req_time_best_pick_strategy_0_1000_long",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "LongMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes1000",
+        "station_metrics_filename": "google_average_pessimistic",
+        "general_config_filename" : "default",
+        "algo_config": {
+          "pick_strategy": 0,
+          "dont_take_into_account_future_cars_and_charge": false
+        }
+    }
+  },
+    {
+    "experiment_name": "dynamic_req_time_best_pick_strategy_1_1000_short",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "ShortMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes1000",
+        "station_metrics_filename": "google_average_pessimistic",
+        "general_config_filename" : "default",
+        "algo_config": {
+          "pick_strategy": 1,
+          "dont_take_into_account_future_cars_and_charge": false
+        }
+    }
+  },
+  {
+    "experiment_name": "dynamic_req_time_best_pick_strategy_1_1000_long",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "LongMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes1000",
+        "station_metrics_filename": "google_average_pessimistic",
+        "general_config_filename" : "default",
+        "algo_config": {
+          "pick_strategy": 1,
+          "dont_take_into_account_future_cars_and_charge": false
+        }
+    }
+  },
+    {
+    "experiment_name": "dynamic_req_time_best_pick_strategy_2_1000_short",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "ShortMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes1000",
+        "station_metrics_filename": "google_average_pessimistic",
+        "general_config_filename" : "default",
+        "algo_config": {
+          "pick_strategy": 2,
+          "dont_take_into_account_future_cars_and_charge": false
+        }
+    }
+  },
+  {
+    "experiment_name": "dynamic_req_time_best_pick_strategy_2_1000_long",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "LongMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes1000",
+        "station_metrics_filename": "google_average_pessimistic",
+        "general_config_filename" : "default",
+        "algo_config": {
+          "pick_strategy": 2,
+          "dont_take_into_account_future_cars_and_charge": false
+        }
+    }
+  },
+    {
+    "experiment_name": "dynamic_req_time_best_pick_strategy_3_1000_short",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "ShortMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes1000",
+        "station_metrics_filename": "google_average_pessimistic",
+        "general_config_filename" : "default",
+        "algo_config": {
+          "pick_strategy": 3,
+          "dont_take_into_account_future_cars_and_charge": false
+        }
+    }
+  },
+  {
+    "experiment_name": "dynamic_req_time_best_pick_strategy_3_1000_long",
+    "number_of_runs": 10,
+    "dynamic_trip_requests_filename":true,
+    "config" : {
+		"algorithm_class" : "LongMode",
+		"trip_requests_filename" : "exp/dynamic_request_time/variant$_routes1000",
+        "station_metrics_filename": "google_average_pessimistic",
+        "general_config_filename" : "default",
+        "algo_config": {
+          "pick_strategy": 3,
+          "dont_take_into_account_future_cars_and_charge": false
+        }
+    }
+  }
 ]
