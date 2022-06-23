@@ -34,8 +34,8 @@ def generate():
 										"p_of_crossover": crossover_p,
 										"genetic_mutate": mutate_method,
 										"p_of_mutate": mutate_p,
-										"genetic_population_size": 200,
-										"genetic_max_iterations": 50,
+										"genetic_population_size": 400,
+										"genetic_max_iterations": 100,
 										"genetic_use_long_mode_as_well": False
 									}
 								}
