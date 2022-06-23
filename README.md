@@ -67,5 +67,7 @@
 			
 			"genetic_population_size": 1000
 			"genetic_max_iterations": 500
+			"genetic_use_long_mode_as_well": true           // Boolean, if the genetic algorithm should try to assign
+			                                                    unassigned trips using long and short mode as well
 			                                                   
 		},

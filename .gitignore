@@ -158,3 +158,4 @@ cython_debug/
 
 /experiments.zip
 /experiments/experiments_draft.json
+/scripts/experiment_config_generator/experiments_genetic.json

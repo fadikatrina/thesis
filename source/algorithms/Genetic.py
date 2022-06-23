@@ -14,6 +14,7 @@ class Genetic:
 		self.should_assign_option = config["genetic_should_assign_strategy"]
 		self.assign_every_x_trips = config["genetic_assign_every_x_trips"]
 		self.assign_every_x_seconds = config["genetic_assign_every_x_seconds"]
+		self.use_long_mode_as_well = config["genetic_use_long_mode_as_well"]
 		self.last_sim_clock_time_genetic_assigned = 0
 		self.last_number_announced_trips_genetic_assigned = 0
 		self.config = config
@@ -65,6 +66,7 @@ class Genetic:
 
 	def assign_cars(self, sim: Simulation):
 		if self.should_assign_using_genetic(sim):
+			l.info("Genetic is running")
 			self.last_number_announced_trips_genetic_assigned = len(sim.announced_trip_list)
 			self.last_sim_clock_time_genetic_assigned = sim.simulation_clock
 			new_trip_list = self.assign_using_ga(sim)
@@ -72,4 +74,7 @@ class Genetic:
 			sim.announced_trip_list = filter_illegal_assignments(new_trip_list, sim)
 			self.tracker.genetic_most_fit_legal.append([x.car_id for x in sim.announced_trip_list])
 			self.tracker.no_assignments_genetic.append(sum(i.car_id > -1 for i in sim.announced_trip_list))
-		return self.long_mode.assign_cars(sim)
+		if self.use_long_mode_as_well:
+			return self.long_mode.assign_cars(sim)
+		else:
+			return sim.announced_trip_list

@@ -12,7 +12,7 @@ def start_experiments(experiments=None):
 	# for experiment in experiments:
 	# 	run_experiment(experiment)
 
-	Parallel(n_jobs=40)(delayed(run_experiment)(exp) for exp in experiments)
+	Parallel(n_jobs=50)(delayed(run_experiment)(exp) for exp in experiments)
 	print("FINISHED ALL EXPERIMENTS")
 
 

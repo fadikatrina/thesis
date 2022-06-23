@@ -13,6 +13,7 @@ class LongMode:
 	def __init__(self, config, tracker):
 		self.short_mode = ShortMode(config, tracker)
 		self.tracker = tracker
+		self.trips_already_attempted_long = []
 
 	def keep_cars_with_1_future_trip(self, cars, trip_list, trip_start_time):
 		avail_cars = []
@@ -36,7 +37,8 @@ class LongMode:
 		self.short_mode.set_logger(algo_short_mode)
 		sim.set_new_triplist(self.short_mode.assign_cars(sim))
 		for trip in sim.announced_trip_list:
-			if not trip.has_a_car():
+			if not trip.has_a_car() and trip.id_ not in self.trips_already_attempted_long:
+				self.trips_already_attempted_long.append(trip.id_)
 				l.info(f"SHORT NOT ENOUGH, USING LONG MODE TRIP ({trip})")
 				sim2 = copy.deepcopy(sim)
 				sim3 = copy.deepcopy(sim)
@@ -78,5 +80,7 @@ class LongMode:
 						break
 					else:
 						l.info(f"SHORTMODE NO ALTERNATIVE CAR THAN ({candidate_car.id_}) TRIP ({candidate_trip_assigned_alt_car})")
+			else:
+				l.debug(f"Skipping trip because has a car or already attempted to assign {trip}")
 		self.tracker.no_assignments_long.append(count_assigned)
 		return sim.announced_trip_list

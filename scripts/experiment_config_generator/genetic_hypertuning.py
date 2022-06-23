@@ -2,9 +2,9 @@ import json
 
 
 def generate():
-	experiments = []
 
 	for eval_method in [2, 4, 5]:
+		experiments = []
 		for crossover_method in range(1, 3):
 			for mutate_method in range(1, 3):
 				for crossover_p in range(11):
@@ -14,12 +14,12 @@ def generate():
 						if mutate_p > 1:
 							mutate_p = mutate_p / 10
 						experiments.append({
-								"experiment_name": f"gen_hyper_500_{mutate_p}_{crossover_p}_{mutate_method}_{crossover_method}_{eval_method}",
+								"experiment_name": f"gen_hyper_100_{mutate_p}_{crossover_p}_{mutate_method}_{crossover_method}_{eval_method}",
 								"number_of_runs": 1,
 								"dynamic_trip_requests_filename": False,
 								"config": {
 									"algorithm_class": "Genetic",
-									"trip_requests_filename": f"exp/variant1_routes500",
+									"trip_requests_filename": f"compact1hr/variant0_routes100",
 									"station_metrics_filename": "google_average_pessimistic",
 									"general_config_filename" : "og_paper_no_max_capacity",
 									"algo_config": {
@@ -34,14 +34,15 @@ def generate():
 										"p_of_crossover": crossover_p,
 										"genetic_mutate": mutate_method,
 										"p_of_mutate": mutate_p,
-										"genetic_population_size": 300,
-										"genetic_max_iterations": 50
+										"genetic_population_size": 200,
+										"genetic_max_iterations": 50,
+										"genetic_use_long_mode_as_well": False
 									}
 								}
 							})
 
-	with open(f'./experiments_genetic.json', 'w') as fp:
-		json.dump(experiments, fp)
+		with open(f'./experiments_genetic_{eval_method}.json', 'w') as fp:
+			json.dump(experiments, fp)
 
 
 if __name__ == "__main__":

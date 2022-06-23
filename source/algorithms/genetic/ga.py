@@ -6,7 +6,6 @@ from source.algorithms.genetic.mutate import mutate
 from source.algorithms.genetic.visualise import visualise
 from source.algorithms.genetic.population import population
 from source.algorithms.genetic.individual import individual
-from source.algorithms.genetic.helpers import reset_simulation_cache
 from source.helpers.logger import algo_genetic as l
 
 
@@ -82,7 +81,6 @@ class ga:
 
         if genes is not list: genes = list(genes)
         self.population = population(populationSize, self.eval, genes, genesInEachInidivudal, printPopulation, replacement=self.REPLACEMENT)
-        reset_simulation_cache()
 
     def run(self):
 
@@ -99,7 +97,6 @@ class ga:
                 parent2 = mating_pool.pop(random.randrange(len(mating_pool)))
                 self.makeBabiesOrDuplicate(parent1, parent2)
 
-            reset_simulation_cache()
             most_fit = self.population.getMostFitIndividuals()
             count = count + 1
 

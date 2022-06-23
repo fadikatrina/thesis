@@ -2,11 +2,11 @@ from os import walk
 import json
 from pathlib import Path
 
-FOLDER_NAME = "input"
+INPUT_FOLDER_NAME = "input"
 
 
-def restructure_txt_from_route_generation_tool():
-	filenames = next(walk(f"./{FOLDER_NAME}"), (None, None, []))[2]  # [] if no file
+def restructure_txt_from_route_generation_tool(out_folder_name):
+	filenames = next(walk(f"./{INPUT_FOLDER_NAME}"), (None, None, []))[2]  # [] if no file
 
 	for filename in filenames:
 
@@ -14,13 +14,14 @@ def restructure_txt_from_route_generation_tool():
 			continue
 
 		res = {"trips" : []}
-		with open(f'./{FOLDER_NAME}/{filename}') as f:
+		with open(f'./{INPUT_FOLDER_NAME}/{filename}') as f:
 			lines = f.readlines()
 
 		for line in lines:
 			line = line.rstrip('\n').split(',')
 			start_time = line[2].split(":")
 			start_time = (int(start_time[0])*3600) + (int(start_time[1])*60)
+			# start_time = (int(start_time[1])*60)
 			if start_time == 0:
 				continue
 			start_id = int(line[0])
@@ -37,10 +38,11 @@ def restructure_txt_from_route_generation_tool():
 		filename = filename.split("-")[1:3]
 		filename = '_'.join(filename)
 
-		with open(f'../../input/trips_requests/exp/{filename}.json', 'w') as fp:
+		with open(f'../../input/trips_requests/{out_folder_name}/{filename}.json', 'w') as fp:
 			json.dump(res, fp)
 
 
 if __name__ == "__main__":
-	Path("./scrape_dump/realtime_grouped/").mkdir(parents=True, exist_ok=True)
-	restructure_txt_from_route_generation_tool()
+	Path("../../input/trips_requests/exp/").mkdir(parents=True, exist_ok=True)
+	Path("../../input/trips_requests/compact1hr/").mkdir(parents=True, exist_ok=True)
+	restructure_txt_from_route_generation_tool("compact1hr")

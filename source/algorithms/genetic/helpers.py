@@ -8,6 +8,7 @@ simulation_cache = {}
 
 
 def reset_simulation_cache():
+	l.info("Cache for genetic is reset")
 	global simulation_cache
 	simulation_cache = {}
 

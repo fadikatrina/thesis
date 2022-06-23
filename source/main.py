@@ -69,18 +69,18 @@ class Main:
 if __name__ == "__main__":
 	Main(
 		algorithm_class="Genetic",
-		trip_requests_filename="exp/variant0_routes120",
-		general_config_filename="default",
+		trip_requests_filename="compact1hr/variant0_routes100",
+		general_config_filename="og_paper_no_max_capacity",
 		car_charge_config_filename="default",
 		check_results_filename="nothing",
-		log_filename="genetic_max_capacity",
-		output_results_filename="genetic_max_capacity",
+		log_filename="comapct",
+		output_results_filename="compact",
 		station_metrics_filename="pessimistic",
-		assign_cars_only_after_all_trips_announced=True,
+		assign_cars_only_after_all_trips_announced=False,
 		algo_config={
 			"pick_strategy": 3,
 			"dont_take_into_account_future_cars_and_charge": False,
-			"genetic_eval_strategy": 1,
+			"genetic_eval_strategy": 2,
 			"genetic_should_assign_strategy": 1,
 			"genetic_assign_every_x_trips": 5,
 			"genetic_assign_every_x_seconds": 40000,
@@ -90,7 +90,8 @@ if __name__ == "__main__":
 			"genetic_mutate": 1,
 			"p_of_mutate": 0.2,
 			"genetic_population_size": 100,
-			"genetic_max_iterations": 20,
-			"image_filename": "itworks"
+			"genetic_max_iterations": 1,
+			"image_filename": "itworks",
+			"genetic_use_long_mode_as_well": False
 		},
 	)

@@ -108,5 +108,7 @@ class ShortMode:
 				trip.car_id = self.choose_car(available_cars, sim2, trip.start_station_id, trip.end_station_id).id_
 				self.l.info(f"ASSIGNED CAR ({trip.car_id}) FOR TRIP ({trip})")
 				count_assigned += 1
+			else:
+				self.l.debug(f"Skipping trip because has a car or already attempted to assign {trip}")
 		self.tracker.no_assignments_short.append(count_assigned)
 		return sim.announced_trip_list
