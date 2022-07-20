@@ -16,7 +16,7 @@ class Main:
 	             mod_filename="bristol", log_filename="default", output_results_filename="default",
 	             check_results_filename="nothing", general_config_filename="default",
 	             car_charge_config_filename="default", station_metrics_filename="bristol_metrics_ogpaper",
-	             algo_config={"strategy": 1}, assign_cars_only_after_all_trips_announced=False):
+	             algo_config={"strategy": 1}, assign_cars_only_after_all_trips_announced=False, calculate_max_cars_in_station=False):
 
 		# dynamically importing the needed algorithm class based on its name
 		# https://stackoverflow.com/questions/4821104/dynamic-instantiation-from-string-name-of-a-class-in-dynamically-imported-module
@@ -47,6 +47,7 @@ class Main:
 		self.sim = Simulation(get_trip_requests(trip_requests_filename), mod_filename)
 		self.sim.set_logger(sim_logger)
 		self.assign_cars_only_after_all_trips_announced = assign_cars_only_after_all_trips_announced
+		self.calculate_max_cars_in_station = calculate_max_cars_in_station
 
 		# everything is initialised, lets start the simulation
 		sim_logger.critical("================================================")
@@ -61,6 +62,7 @@ class Main:
 				self.sim.set_new_triplist(new_triplist)
 				self.sim.new_trips_announced = False
 			self.sim.advance_simulation()
+			if self.calculate_max_cars_in_station: self.sim.update_max_cars_at_station()
 		sim_logger.critical("======= SIM COMPLETE WRITING RESULTS NOW =======")
 		write_txt(self.sim, self.output_results_filename, self.config_vars, self.tracker)
 		check_result(self.sim, self.check_results_filename)

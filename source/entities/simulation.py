@@ -31,6 +31,7 @@ class Simulation:
 		self.TOTAL_TRIPS_NO = len(trip_requests)
 		self.TOTAL_CARS_NO = self.calculate_total_cars_no_in_stations()
 		self.new_trips_announced = False
+		self.MAX_NO_CARS_AT_STATION = 0
 
 	def set_logger(self, logger):
 		self.l = logger
@@ -220,6 +221,11 @@ class Simulation:
 	def get_all_cars(self):
 		cars_lists = [x.cars for x in self.stations]
 		return [x for xs in cars_lists for x in xs]
+
+	def update_max_cars_at_station(self):
+		for station in self.stations:
+			if len(station.cars) > self.MAX_NO_CARS_AT_STATION:
+				self.MAX_NO_CARS_AT_STATION = len(station.cars)
 
 	def __str__(self):
 		return f"Simulation STATIONS# {len(self.stations)}"

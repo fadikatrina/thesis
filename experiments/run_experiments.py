@@ -49,7 +49,8 @@ def run_experiment(experiment):
 					station_metrics_filename=config.get("station_metrics_filename"),
 					algo_config=config.get("algo_config"),
 					assign_cars_only_after_all_trips_announced=config.get("assign_cars_only_after_all_trips_announced",
-					                                                      False)
+					                                                      False),
+					calculate_max_cars_in_station=config.get("calculate_max_cars_in_station", False)
 				)
 				print(f"Completed successfully {run_no} of {exp_name}")
 			except Exception as e:

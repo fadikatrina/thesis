@@ -7,6 +7,7 @@
       	"algorithm_class" : "FirstAvailable",
         "trip_requests_filename" : "default",
         "station_metrics_filename": "bristol_metrics_ogpaper",
+        "calculate_max_cars_in_station": true,
         "algo_config": {
           "pick_strategy": 2
         }

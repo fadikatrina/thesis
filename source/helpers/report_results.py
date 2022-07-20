@@ -13,6 +13,8 @@ def write_txt(sim: Simulation, filename, config_vars, tracker):
 
 		f.write(f"KEY METRICS")
 		f.write('\n')
+		f.write(f"MAX NUMBER OF CARS AT A STATION {sim.MAX_NO_CARS_AT_STATION}")
+		f.write('\n')
 		f.write(f"PERCENTAGE TRIPS COMPLETED {len(sim.completed_trip_list) / sim.TOTAL_TRIPS_NO}")
 		f.write('\n')
 		f.write(f"PERCENTAGE TRIPS REJECTED {len(sim.rejected_trip_list) / sim.TOTAL_TRIPS_NO}")
