@@ -29,6 +29,8 @@ class LongMode:
 		l.debug(f"MIN_CHARGE_NEEDED ({min_charge_needed}) CARS ({[str(x) for x in cars]})")
 		res = [x for x in cars if x.current_charge_level >= min_charge_needed]
 		l.debug(f"ENOUGH CHARGE CARS ({[str(x) for x in res]})")
+		if len(res) < len(cars):
+			l.info(f"REMOVEDCARSBECAUSENOTENOUGHCHARGE ({str(len(cars) - len(res))})")
 		return res
 
 	def assign_cars(self, sim: Simulation):

@@ -28,6 +28,8 @@ class ShortMode:
 		self.l.debug(f"MIN_CAHRGE_NEEDED ({min_charge_needed}) CARS ({[str(x) for x in cars]})")
 		res = [x for x in cars if x.current_charge_level >= min_charge_needed]
 		self.l.debug(f"ENOUGH CHARGE CARS ({[str(x) for x in res]})")
+		if len(res) < len(cars):
+			self.l.info(f"REMOVEDCARSBECAUSENOTENOUGHCHARGE ({str(len(cars) - len(res))})")
 		return res
 
 	def get_car_with_most_charge(self, cars):
