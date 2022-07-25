@@ -159,3 +159,5 @@ cython_debug/
 /experiments.zip
 /experiments/experiments_draft.json
 /scripts/experiment_config_generator/experiments_genetic.json
+/experiments/results/
+/experiments/analysis/compare_setups_viz/
