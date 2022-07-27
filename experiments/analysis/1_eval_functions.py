@@ -3,14 +3,14 @@ from pathlib import Path
 from os import walk
 
 OUTPUT_FOLDER_NAME = 'best_pick'
-PATH_TO_RESULTS = '../results/syncfrom1c/output/results'
+PATH_TO_RESULTS = '../results/syncfrom1c/output/results/best_pick_strategy'
 # PATH_TO_RESULTS = '../results/syncfrom1b/output/results'
 OFFSET = 0
 # OFFSET = 3
 FILTER_SUBSTRING = 'best_pick_strategy'
 
 
-def viz_best_pick_strategy():
+def run():
 	pick_strategies = [0, 1, 2, 3]
 	modes = ['short', 'long']
 	no_trips = [60, 120, 500, 1000]
@@ -44,9 +44,9 @@ def viz_best_pick_strategy():
 
 if __name__ == "__main__":
 	Path(f"./logs").mkdir(parents=True, exist_ok=True)
-	Path(f"./{OUTPUT_FOLDER_NAME}_viz").mkdir(parents=True, exist_ok=True)
+	Path(f"./viz/{OUTPUT_FOLDER_NAME}").mkdir(parents=True, exist_ok=True)
 	logging.basicConfig(filename=f"./logs/{OUTPUT_FOLDER_NAME}.log", level=logging.DEBUG)
-	viz_best_pick_strategy()
+	run()
 
 
 ############# RESULTS ALL ANNOUNCED (1C) AVG PERC

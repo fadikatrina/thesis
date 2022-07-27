@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 OUTPUT_FOLDER_NAME = 'compare_setups'
 
 
-def viz_best_pick_strategy():
+def run():
 	modes = ['short', 'long']
 	no_trips = [60, 120, 500, 1000]
 	# filter_substrings = ['recreate_og', 'with_short_enhancement', 'with_station_limit']
@@ -56,14 +56,13 @@ def viz_best_pick_strategy():
 				plt.xlabel('Trip Count')
 				plt.ylabel('Perc Completed')
 				plt.ylim(ymin=0)
-				plt.savefig(f'./compare_setups_viz/{type}_{mode}_{filter_substring}_perc.jpg')
-				plt.clf()
+				plt.savefig(f'./viz/{OUTPUT_FOLDER_NAME}/{type}_{mode}_{filter_substring}_perc.jpg')
+				plt.show()
 
 
 if __name__ == "__main__":
 	Path(f"./logs").mkdir(parents=True, exist_ok=True)
-	Path(f"./{OUTPUT_FOLDER_NAME}_viz").mkdir(parents=True, exist_ok=True)
+	Path(f"./viz/{OUTPUT_FOLDER_NAME}").mkdir(parents=True, exist_ok=True)
 	logging.basicConfig(filename=f"./logs/{OUTPUT_FOLDER_NAME}.log", level=logging.DEBUG)
-	viz_best_pick_strategy()
-
+	run()
 

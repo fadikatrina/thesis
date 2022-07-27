@@ -3,7 +3,7 @@ import json
 import random
 from pathlib import Path
 
-PATH = "../../input/trips_requests/exp"
+PATH = "../../input/trips_requests/compact1hr"
 ANNOUNCE_UP_TO_SECONDS_BEFORE = 3600
 
 
