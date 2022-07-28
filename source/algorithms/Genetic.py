@@ -16,7 +16,7 @@ class Genetic:
 		self.assign_every_x_seconds = config["genetic_assign_every_x_seconds"]
 		self.use_long_mode_as_well = config["genetic_use_long_mode_as_well"]
 		self.last_sim_clock_time_genetic_assigned = 0
-		self.last_number_announced_trips_genetic_assigned = 0
+		self.last_number_request_trips_genetic_assigned = 0
 		self.config = config
 		self.tracker = tracker
 		self.count_uses = 0
@@ -54,20 +54,20 @@ class Genetic:
 				l.debug(f"Accepted based on the time measure ({sim.simulation_clock}) ({self.last_sim_clock_time_genetic_assigned}) ({self.assign_every_x_seconds})")
 				return True
 		elif self.should_assign_option == 2:
-			if self.last_number_announced_trips_genetic_assigned == 0:
+			if self.last_number_request_trips_genetic_assigned == 0:
 				return True
-			if (len(sim.announced_trip_list) - self.last_number_announced_trips_genetic_assigned) > self.assign_every_x_trips:
-				l.debug(f"Accepted based on the announced trips measure ({len(sim.announced_trip_list)}) ({self.last_number_announced_trips_genetic_assigned}) ({self.assign_every_x_trips})")
+			if (self.last_number_request_trips_genetic_assigned - len(sim.request_trip_list)) > self.assign_every_x_trips:
+				l.debug(f"Accepted based on the announced trips measure ({len(sim.request_trip_list)}) ({self.last_number_request_trips_genetic_assigned}) ({self.assign_every_x_trips})")
 				return True
 		else:
 			raise ValueError(f"Invalid value of ({self.should_assign_option}) for should_assign_option in Genetic Algo")
-		l.debug(f"Rejected ({sim.simulation_clock}) ({len(sim.announced_trip_list)})")
+		l.debug(f"Rejected ({sim.simulation_clock}) ({len(sim.request_trip_list)})")
 		return False
 
 	def assign_cars(self, sim: Simulation):
 		if self.should_assign_using_genetic(sim):
 			l.info("Genetic is running")
-			self.last_number_announced_trips_genetic_assigned = len(sim.announced_trip_list)
+			self.last_number_request_trips_genetic_assigned = len(sim.request_trip_list)
 			self.last_sim_clock_time_genetic_assigned = sim.simulation_clock
 			new_trip_list = self.assign_using_ga(sim)
 			reset_simulation_cache()
