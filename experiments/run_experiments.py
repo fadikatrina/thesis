@@ -30,10 +30,7 @@ def experiment_already_complete(experiment, run_no):
 
 
 def run_experiment_now(main):
-	try:
-		main.run()
-	except Exception as e:
-		print(e)
+	main.run()
 
 
 def run_experiment(experiment):
