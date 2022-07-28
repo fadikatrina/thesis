@@ -1,17 +1,17 @@
 import logging
 from pathlib import Path
 from os import walk
-import matplotlib.pyplot as plt
 
 
-OUTPUT_FOLDER_NAME = 'long_mode_contribution'
-PATH_TO_RESULTS = '../results/syncfrom2b/output/results'
+OUTPUT_FOLDER_NAME = 'battery_car_removed'
+PATH_TO_RESULTS = '../results/car_removed_logs/output/results'
 
 
 def run():
 
 	filenames = next(walk(PATH_TO_RESULTS), (None, None, []))[2]
 	print(filenames)
+	count = 0
 
 	for filename in filenames:
 		if filename == ".DS_Store":
@@ -19,8 +19,11 @@ def run():
 		# trips_no = int(filename.split("_")[-2])
 		with open(f"{PATH_TO_RESULTS}/{filename}") as f:
 			lines = f.readlines()
-			if int(lines[12].split(" ")[-1]) > 0:
-				print(filename)
+			lines = [x for x in lines if "REMOVEDCARSBECAUSENOTENOUGHCHARGE" in x]
+			count = count + len(lines)
+
+	print(count)
+	# RESULT: 0 NEVER!!!!!
 
 
 if __name__ == "__main__":
