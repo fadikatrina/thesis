@@ -9,7 +9,7 @@ class TripList(list):
         self.sort_()
 
     def sort_(self):
-        sort_key = operator.attrgetter("start_time", "end_time")
+        sort_key = operator.attrgetter("start_time", "end_time", "id_")
         # secondary_key = operator.attrgetter("car_id")
         self.sort(key=sort_key, reverse=False)
 

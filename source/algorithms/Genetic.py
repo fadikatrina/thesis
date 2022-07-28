@@ -1,7 +1,7 @@
 from source.entities.simulation import Simulation
 from source.algorithms.genetic.ga import ga
 from source.algorithms.genetic.helpers import assign_genotype_to_triplist, filter_illegal_assignments
-from source.algorithms.LongMode import LongMode
+from source.algorithms.ShortMode import ShortMode
 from source.helpers.logger import algo_genetic as l
 from source.algorithms.genetic.helpers import reset_simulation_cache
 
@@ -9,7 +9,7 @@ from source.algorithms.genetic.helpers import reset_simulation_cache
 class Genetic:
 
 	def __init__(self, config, tracker):
-		self.long_mode = LongMode(config, tracker)
+		self.short_mode = ShortMode(config, tracker, False)
 		self.eval_option = config["genetic_eval_strategy"]
 		self.should_assign_option = config["genetic_should_assign_strategy"]
 		self.assign_every_x_trips = config["genetic_assign_every_x_trips"]
@@ -72,9 +72,10 @@ class Genetic:
 			new_trip_list = self.assign_using_ga(sim)
 			reset_simulation_cache()
 			sim.announced_trip_list = filter_illegal_assignments(new_trip_list, sim)
+			reset_simulation_cache()
 			self.tracker.genetic_most_fit_legal.append([x.car_id for x in sim.announced_trip_list])
 			self.tracker.no_assignments_genetic.append(sum(i.car_id > -1 for i in sim.announced_trip_list))
 		if self.use_long_mode_as_well:
-			return self.long_mode.assign_cars(sim)
+			return self.short_mode.assign_cars(sim)
 		else:
 			return sim.announced_trip_list

@@ -8,12 +8,13 @@ import random
 
 class ShortMode:
 
-	def __init__(self, config, tracker):
+	def __init__(self, config, tracker, use_cache=True):
 		self.CAR_PICKING_MODE = config["pick_strategy"]
 		self.STUPID_VERSION = config["dont_take_into_account_future_cars_and_charge"]
 		self.l = algo_short_mode
 		self.tracker = tracker
 		self.trips_already_attempted = []
+		self.use_cache = use_cache
 
 	def set_logger(self, new_logger):
 		self.l = new_logger
@@ -76,7 +77,10 @@ class ShortMode:
 	def assign_cars(self, sim: Simulation, avoid_car_id=None):
 		count_assigned = 0
 		for trip in sim.announced_trip_list:
-			if not trip.has_a_car() and trip.id_ not in self.trips_already_attempted:
+			if not trip.has_a_car():
+				if self.use_cache:
+					if trip.id_ in self.trips_already_attempted:
+						continue
 				self.trips_already_attempted.append(trip.id_)
 				sim2 = copy.deepcopy(sim)
 				sim2.LOG = False
