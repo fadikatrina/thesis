@@ -51,6 +51,7 @@ class Main:
 
 		# everything is initialised, lets start the simulation
 		sim_logger.critical("================================================")
+		self.run()
 
 	def run(self):
 		while not self.sim.simulation_END:
@@ -68,9 +69,9 @@ class Main:
 
 
 if __name__ == "__main__":
-	main = Main(
+	Main(
 		algorithm_class="ShortMode",
-		trip_requests_filename="exp/dynamic_request_time/variant0_routes60",
+		trip_requests_filename="exp/dynamic_request_time/variant0_routes500",
 		general_config_filename="og_paper_with_max_capacity",
 		car_charge_config_filename="default",
 		check_results_filename="nothing",
@@ -96,4 +97,3 @@ if __name__ == "__main__":
 			# "genetic_use_long_mode_as_well": False
 		},
 	)
-	main.run()
