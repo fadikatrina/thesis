@@ -5,7 +5,9 @@ import matplotlib.pyplot as plt
 
 
 OUTPUT_FOLDER_NAME = 'long_mode_contribution'
-PATH_TO_RESULTS = '../results/syncfrom2b/output/results'
+# PATH_TO_RESULTS = '../results/syncfrom2b/output/results'
+# PATH_TO_RESULTS = '../results/recreate_dynamic_pess/output/results'
+PATH_TO_RESULTS = '../results/recreate_not_dynamic_pess/output/results'
 
 
 def run():
@@ -19,6 +21,7 @@ def run():
 		# trips_no = int(filename.split("_")[-2])
 		with open(f"{PATH_TO_RESULTS}/{filename}") as f:
 			lines = f.readlines()
+			# print(int(lines[12].split(" ")[-1]))
 			if int(lines[12].split(" ")[-1]) > 0:
 				print(filename)
 
