@@ -29,15 +29,16 @@ def filter_using_simulation(trip_list, sim):
 	sim2.set_logger(sim_copy_logger)
 	trip_list2 = copy.deepcopy(trip_list)
 	sim2.set_new_triplist(trip_list2)
-	while not sim2.simulation_END:
-		try:
+	try:
+		while not sim2.simulation_END:
 			sim2.advance_simulation()
-		except CarIDError as e:
-			l.debug(f"Removing car trip assignment, CarIDError {e.trip}")
-			trip_list.remove(e.trip)
-			simulation_cache.setdefault(e.trip.id_, []).append(e.trip.car_id)
-			e.trip.car_id = -1
-			trip_list.append(e.trip)
+	except CarIDError as e:
+		l.debug(f"Removing car trip assignment, CarIDError {e.trip}")
+		trip_list.remove(e.trip)
+		simulation_cache.setdefault(e.trip.id_, []).append(e.trip.car_id)
+		e.trip.car_id = -1
+		trip_list.append(e.trip)
+		return filter_using_simulation(trip_list, sim)
 	return trip_list, simulation_cache
 
 
