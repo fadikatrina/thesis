@@ -4,15 +4,18 @@ from source.algorithms.genetic.ga_component import ga_component
 
 class individual:
 
-    def __init__(self, eval, genotype=None, genes=None, individual_size=None, print_debug=False, replacement=True):
+    def __init__(self, eval, genotype=None, genes=None, individual_size=None, print_debug=False, replacement=True, start_genotype=None):
         ga_component.__init__(self, print_debug)
         self.replacement = replacement
         self.eval = eval
-        if(genotype):
-            self.setGenotype(genotype)
+        if start_genotype:
+            self.setGenotype(start_genotype)
         else:
-            genotype = self.chooseRandomlyFromGenes(genes, individual_size)
-            self.setGenotype(genotype)
+            if(genotype):
+                self.setGenotype(genotype)
+            else:
+                genotype = self.chooseRandomlyFromGenes(genes, individual_size)
+                self.setGenotype(genotype)
 
     def setGenotype(self, genotype):
         self.individual_size = len(genotype)

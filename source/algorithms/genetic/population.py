@@ -4,7 +4,7 @@ from source.algorithms.genetic.ga_component import ga_component
 
 class population:
 
-    def __init__(self, population_size, eval, genes, individual_size, print_debug=False, replacement=True):
+    def __init__(self, population_size, eval, genes, individual_size, print_debug=False, replacement=True, start_genotype=None):
         ga_component.__init__(self, print_debug)
         self.replacement = replacement
         self.eval = eval
@@ -12,6 +12,7 @@ class population:
         self.most_fit_individuals = []
         self.total_fitness = 0
         self.population_size = 0
+        self.start_genotype = start_genotype
         self.addIndividuals(self.getRandomlyGeneratedIndividuals(population_size, genes, individual_size))
 
     def addIndividuals(self, individuals):
@@ -33,7 +34,7 @@ class population:
     def getRandomlyGeneratedIndividuals(self, how_many, genes, individual_size):
         randomly_generated_individuals = []
         for i in range(0, how_many):
-            randomly_generated_individuals.append(individual(self.eval, genes=genes, individual_size=individual_size, replacement=self.replacement))
+            randomly_generated_individuals.append(individual(self.eval, genes=genes, individual_size=individual_size, replacement=self.replacement, start_genotype=self.start_genotype))
         return randomly_generated_individuals
 
     def clear(self):

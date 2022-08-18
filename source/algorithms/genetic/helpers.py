@@ -52,3 +52,10 @@ def assign_genotype_to_triplist(sim, genotype):
 	for i in range(len(sim.announced_trip_list)):
 		sim.announced_trip_list[i].car_id = genotype[i]
 	return sim.announced_trip_list
+
+
+def assign_triplist_to_genotype(triplist):
+	genotype = []
+	for i in range(len(triplist)):
+		genotype.append(triplist[i].car_id)
+	return genotype

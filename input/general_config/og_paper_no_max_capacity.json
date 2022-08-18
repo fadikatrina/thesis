@@ -3,5 +3,5 @@
   "station_max_capacity": 1000,
   "station_initial_number_of_cars": 5,
   "car_initial_charge_level": 100,
-  "car_recharge_per_second": 0.00463
+  "car_recharge_per_second": 0.028
 }

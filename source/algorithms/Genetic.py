@@ -1,6 +1,6 @@
 from source.entities.simulation import Simulation
 from source.algorithms.genetic.ga import ga
-from source.algorithms.genetic.helpers import assign_genotype_to_triplist, filter_illegal_assignments
+from source.algorithms.genetic.helpers import assign_genotype_to_triplist, filter_illegal_assignments, assign_triplist_to_genotype
 from source.algorithms.ShortMode import ShortMode
 from source.helpers.logger import algo_genetic as l
 from source.algorithms.genetic.helpers import reset_simulation_cache
@@ -22,6 +22,7 @@ class Genetic:
 		self.count_uses = 0
 
 	def assign_using_ga(self, sim):
+		start_genotype = assign_triplist_to_genotype(self.short_mode.assign_cars(sim))
 		ga_object = ga(
 			populationSize=self.config["genetic_population_size"],
 			targetFitness=len(sim.announced_trip_list),
@@ -37,7 +38,8 @@ class Genetic:
 			pOfMutating=self.config["p_of_mutate"],
 			sim=sim,
 			image_filename=self.config["image_filename"],
-			count_uses = self.count_uses
+			count_uses=self.count_uses,
+			start_genotype=start_genotype
 		)
 		ga_solution = ga_object.run()[0].getGenotype()
 		self.tracker.genetic_most_fit_genotype.append(ga_solution)

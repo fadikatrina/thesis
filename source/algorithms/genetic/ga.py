@@ -60,7 +60,8 @@ class ga:
                  sim = None,
                  genesAsArray = False,
                  image_filename="stats",
-                 count_uses = 0):
+                 count_uses=0,
+                 start_genotype=None):
         self.config_string = f"Cross {pOfCrossing} {crossoverChoice} Mutate {pOfMutating} {mutateChoice} Select {selectionChoice} Eval {evaluationChoice} " \
                              f"PopSize {populationSize} MaxItr {maxIterations}"
         if not numberToSelect: numberToSelect = int(populationSize/2)
@@ -80,7 +81,7 @@ class ga:
         self.count_uses = count_uses
 
         if genes is not list: genes = list(genes)
-        self.population = population(populationSize, self.eval, genes, genesInEachInidivudal, printPopulation, replacement=self.REPLACEMENT)
+        self.population = population(populationSize, self.eval, genes, genesInEachInidivudal, printPopulation, replacement=self.REPLACEMENT, start_genotype=start_genotype)
 
     def run(self):
 
