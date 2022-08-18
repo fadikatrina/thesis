@@ -11,7 +11,7 @@ OUTPUT_FOLDER_NAME = 'genetic_with_without'
 def run():
 	result_paths = ['../results/genetic_dynamic/output/results', '../results/genetic_dynamic_compact/output/results', '../results/genetic_not_dynamic/output/results', '../results/genetic_not_dynamic_compact/output/results']
 
-	dict_res = {"notdynamic_with": 0}
+	dict_res = {}
 
 	for result_path in result_paths:
 
@@ -32,7 +32,6 @@ def run():
 
 			perc_current = []
 			for filename in filenames_filtered:
-
 				with open(f"{result_path}/{filename}") as f:
 					lines = f.readlines()
 					perc_current.append(float(lines[4].split(" ")[3]))
@@ -42,24 +41,26 @@ def run():
 
 			dict_res[type] = sum(perc_current) / len(perc_current)
 
-	for dynamic in ["dynamic", "notdynamic"]:
 
-		x_labels = ['1 Day', '1 Hour']
-		x_axis = np.arange(len(x_labels))
-		plt.figure(200)
+	print(dict_res)
+	x_labels = ['Offline', 'Online']
+	x_axis = np.arange(len(x_labels))
+	plt.figure(200)
 
-		plt.bar(x_axis - 0.1, [dict_res[f"{dynamic}_with"], dict_res[f"{dynamic}_compact_with"]], width=0.2, label='With Genetic')
-		plt.bar(x_axis + 0.1, [dict_res[f"{dynamic}_without"], dict_res[f"{dynamic}_compact_without"]], width=0.2, label='Without Genetic')
+	print([dict_res[f"notdynamic_without"], dict_res[f"dynamic_without"]])
 
-		plt.xticks(x_axis, x_labels)
+	plt.bar(x_axis - 0.1, [dict_res[f"notdynamic_with"], dict_res[f"dynamic_with"]], width=0.2, label='With Genetic')
+	plt.bar(x_axis + 0.1, [dict_res[f"notdynamic_without"], dict_res[f"dynamic_without"]], width=0.2, label='Without Genetic')
 
-		plt.legend()
-		plt.title(f"{dynamic}")
-		plt.xlabel('Sim Duration')
-		plt.ylabel('Perc Completed')
-		plt.ylim(ymin=0)
-		plt.savefig(f'./viz/{OUTPUT_FOLDER_NAME}/{dynamic}.jpg')
-		plt.show()
+	plt.xticks(x_axis, x_labels)
+
+	plt.legend()
+	plt.title(f"ShortMode vs. Genetic Algorithm")
+	plt.xlabel('Setting')
+	plt.ylabel('Perc Completed')
+	plt.ylim(ymin=0)
+	plt.savefig(f'./viz/{OUTPUT_FOLDER_NAME}/withwithoutgenetic.jpg')
+	plt.show()
 
 
 if __name__ == "__main__":

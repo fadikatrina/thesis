@@ -42,7 +42,7 @@ def run():
 	plt.bar(x, y2, bottom=y1, color='b')
 	plt.xlabel("Number of trip requests")
 	plt.ylabel("Number of times long mode stopped because of")
-	plt.legend(["No other car options", "Other car options are not suitable"])
+	plt.legend(["No other car options", "Other car options already scheduled for future trip"])
 	plt.title("Why long mode could not find an alternative")
 	plt.savefig(f'./viz/{OUTPUT_FOLDER_NAME}/stacked_bar_chart.jpg')
 	plt.show()

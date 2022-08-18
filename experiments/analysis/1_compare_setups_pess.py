@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-OUTPUT_FOLDER_NAME = 'compare_setups_pess'
+OUTPUT_FOLDER_NAME = 'compare_setups_pess_shortenhanced'
 
 
 def run():
@@ -15,6 +15,7 @@ def run():
 
 	dict_res = {}
 
+	title = "Offline"
 	for result_path in result_paths:
 		filename_offset = 0
 		lines_offset = 0
@@ -48,8 +49,8 @@ def run():
 
 			dict_res[filter_substring] = perc_avg
 
-			print(f"{type} {filter_substring}")
-			print(perc_avg)
+			# print(f"{type} {filter_substring}")
+			# print(perc_avg)
 
 
 		print(dict_res)
@@ -57,24 +58,28 @@ def run():
 
 		x_axis = np.arange(len(x_labels))
 
+		print(title)
+		print(dict_res["with_station_limit_and_enhancements"])
+
 		# Multi bar Chart
 		plt.figure(200)
-		plt.bar(x_axis - 0.2, dict_res["recreate_og"], width=0.1, label='OG')
-		plt.bar(x_axis - 0.1, dict_res["with_short_enhancement"], width=0.1, label='OG+Enhancement')
-		plt.bar(x_axis, dict_res["with_station_limit"], width=0.1, label='OG+Limit')
-		plt.bar(x_axis + 0.1, dict_res["with_station_limit_and_enhancements"], width=0.1, label='OG+Enhancement+Limit')
+		plt.bar(x_axis - 0.1, dict_res["with_short_enhancement"], width=0.2, label='No station limit')
+		plt.bar(x_axis + 0.1, dict_res["with_station_limit_and_enhancements"], width=0.2, label='With station limit')
+		# plt.bar(x_axis, dict_res["with_station_limit"], width=0.1, label='OG+Limit')
+		# plt.bar(x_axis + 0.1, dict_res["with_station_limit_and_enhancements"], width=0.1, label='OG+Enhancement+Limit')
 
 		# Xticks
 
 		plt.xticks(x_axis, x_labels)
 
 		plt.legend()
-		plt.title(f"{type}")
+		plt.title(f"{title}")
 		plt.xlabel('Trip Count')
 		plt.ylabel('Perc Completed')
 		plt.ylim(ymin=0)
 		plt.savefig(f'./viz/{OUTPUT_FOLDER_NAME}/{type}_{filter_substring}_perc.jpg')
 		plt.show()
+		title = "Online"
 
 
 if __name__ == "__main__":

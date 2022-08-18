@@ -31,7 +31,7 @@ def run():
 	print(max_no_cars_filename)
 	print(max_dict)
 
-	plt.bar([60, 120, 500, 1000], [max_dict[60], max_dict[120], max_dict[500], max_dict[1000]], width=50)
+	plt.bar(["60", "120", "500", "1000"], [max_dict[60], max_dict[120], max_dict[500], max_dict[1000]])
 	plt.xlabel("Number of trip requests")
 	plt.ylabel("Max number of cars at a station")
 	plt.savefig(f'./viz/{OUTPUT_FOLDER_NAME}/max_no_cars.jpg')

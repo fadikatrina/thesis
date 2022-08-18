@@ -39,6 +39,7 @@ def run():
 				no_completed_l.append(no_completed)
 			print(pick_strategy)
 			print(no_completed_l)
+			print(perc_avg)
 
 
 
